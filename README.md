@@ -1,1 +1,1 @@
-##Contract Foundry Docs
+Contract Foundry Docs
