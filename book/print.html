@@ -1,0 +1,1039 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>contract foundry docs</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">contract foundry docs</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="-introduction"><a class="header" href="#-introduction">📘 Introduction</a></h1>
+<h2 id="what-is-contract-foundry"><a class="header" href="#what-is-contract-foundry">What is Contract Foundry?</a></h2>
+<p><strong>Contract Foundry</strong> is a decentralized Web3 platform that empowers individuals and businesses to manage digital identities, execute smart legal contracts, and issue or verify verifiable credentials, all without intermediaries. Built on blockchain technologies, it ensures transparency, security, and automation in digital interactions while adhering to global legal and privacy standards.</p>
+<p>with an user-friendly, non-custodial Android wallet application as interface we move full control into the hands of users, ensuring their data and digital assets remain exclusively theirs.</p>
+<hr />
+<h2 id="why-contract-foundry"><a class="header" href="#why-contract-foundry">Why Contract Foundry?</a></h2>
+<p>Modern digital operations face challenges like centralized control, identity fraud, insecure document handling, and legal non-compliance. Traditional tools often rely on third parties for verification and execution, introducing inefficiencies and risks.</p>
+<p>Contract Foundry solves these issues by introducing a <strong>self-sovereign</strong> model where users:</p>
+<ul>
+<li>Fully control their digital identities and keys.</li>
+<li>Interact directly with smart contracts.</li>
+<li>Issue, verify, and manage contracts and credentials securely.</li>
+</ul>
+<hr />
+<h2 id="core-offerings"><a class="header" href="#core-offerings">Core Offerings</a></h2>
+<ul>
+<li><strong>Smart Legal Contracts</strong>: Contracts for document verification, milestone payments, and digital asset monetization.</li>
+<li><strong>Decentralized Identities (DIDs)</strong>: Create blockchain-anchored identities under the ERC-1056 and W3C standards.</li>
+<li><strong>Verifiable Credentials (VCs)</strong>: Issue and manage tamper-proof credentials with DID-based signatures.</li>
+<li><strong>Digital Signatures</strong>: Legally recognized signatures with full auditability and cryptographic proof.</li>
+<li><strong>Android Wallet dApp</strong>: A non-custodial mobile application serving as the only interface for secure, encrypted contract interactions.</li>
+</ul>
+<hr />
+<h2 id="key-principles"><a class="header" href="#key-principles">Key Principles</a></h2>
+<ul>
+<li><strong>User Sovereignty</strong>: All data, credentials, and transactions are owned and controlled by the user.</li>
+<li><strong>Decentralization</strong>: No central authority stores user data or manages contracts.</li>
+<li><strong>Security by Design</strong>: Private keys never leave the user's device; all interactions are encrypted and signed locally.</li>
+<li><strong>Compliance</strong>: Adheres to global standards including GDPR, eIDAS (EU), ESIGN (US), and W3C specifications.</li>
+</ul>
+<hr />
+<h2 id="target-users"><a class="header" href="#target-users">Target Users</a></h2>
+<ul>
+<li><strong>Freelancers &amp; Creators</strong>: Automate payments, monetization digital assets.</li>
+<li><strong>Enterprises &amp; Agencies</strong>: Manage identity, onboarding, and contractual relationships securely.</li>
+<li><strong>Educational Institutions</strong>: Issue verifiable academic credentials with no forgery risk.</li>
+<li><strong>Blockchain Innovators</strong>: Integrate smart contract workflows and decentralized identity into existing applications.</li>
+</ul>
+<hr />
+<h2 id="vision"><a class="header" href="#vision">Vision</a></h2>
+<p>Contract Foundry envisions a future where digital business interactions are <strong>secure, transparent, and self-directed</strong>. By eliminating reliance on intermediaries and central authorities, it enables true digital autonomy, putting identity, trust and ownership back into the hands of users.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-core-concepts"><a class="header" href="#-core-concepts">📘 Core Concepts</a></h1>
+<p>Understanding the foundational principles behind Contract Foundry is key to leveraging its full capabilities. This section explains the essential components that make up the platform’s decentralized infrastructure, from identity and credentials to smart contracts and cryptographic signatures.</p>
+<hr />
+<h2 id="1-decentralized-identity-did"><a class="header" href="#1-decentralized-identity-did">1. Decentralized Identity (DID)</a></h2>
+<p>A <strong>Decentralized Identity (DID)</strong> is a blockchain-based identity that belongs entirely to its creator. Unlike traditional identity systems that depend on centralized databases or issuing authorities, DIDs allow users to own and manage their digital presence independently.</p>
+<p>Contract Foundry implements DIDs using the <strong>ERC-1056</strong> standard, ensuring compatibility with Ethereum and alignment with <strong>W3C DID</strong> specifications.</p>
+<h3 id="key-components-of-a-did"><a class="header" href="#key-components-of-a-did">Key Components of a DID:</a></h3>
+<ul>
+<li><strong>Controller</strong>: The primary account or key that controls the identity. This can update delegates and manage services.</li>
+<li><strong>Delegates</strong>: Secondary keys with specific roles like signing, encryption or acting on behalf of the controller.</li>
+<li><strong>Services</strong>: URL-based entries used to associate the DID with other metadata, APIs, or public keys.</li>
+</ul>
+<h3 id="use-cases"><a class="header" href="#use-cases">Use Cases:</a></h3>
+<ul>
+<li>Personal or organizational identity</li>
+<li>Verification for credential issuance</li>
+<li>Authenticated smart contract interactions</li>
+</ul>
+<hr />
+<h2 id="2-verifiable-credentials-vc"><a class="header" href="#2-verifiable-credentials-vc">2. Verifiable Credentials (VC)</a></h2>
+<p><strong>Verifiable Credentials</strong> are digitally signed statements that assert facts about an identity. These can represent qualifications, licenses, achievements, or any attribute tied to an individual or organization.</p>
+<p>Contract Foundry supports the <strong>W3C VC data model</strong>, allowing for cross-platform compatibility and decentralized verification.</p>
+<h3 id="structure-of-a-vc"><a class="header" href="#structure-of-a-vc">Structure of a VC:</a></h3>
+<ul>
+<li><strong>Issuer DID</strong>: The identity that signs and issues the credential.</li>
+<li><strong>Subject</strong>: The entity the credential refers to.</li>
+<li><strong>Credential Metadata</strong>: Includes information like credential type, expiration, issuance date.</li>
+<li><strong>Proof</strong>: A cryptographic signature linking the issuer DID with the credential content.</li>
+</ul>
+<h3 id="capabilities"><a class="header" href="#capabilities">Capabilities:</a></h3>
+<ul>
+<li>Issue credentials using forms and document references</li>
+<li>Store credentials locally or export them</li>
+<li>Support credential verification, revocation, and suspension</li>
+</ul>
+<hr />
+<h2 id="3-smart-legal-contracts"><a class="header" href="#3-smart-legal-contracts">3. Smart Legal Contracts</a></h2>
+<p><strong>Smart Contracts</strong> are self-executing digital agreements that live on the blockchain. Contract Foundry offers a suite of <strong>pre-built legal-grade smart contracts</strong>, requiring no coding to deploy.</p>
+<h3 id="core-contracts"><a class="header" href="#core-contracts">Core Contracts:</a></h3>
+<ul>
+<li><strong>Verifiable Document Contract</strong>: Ties a file to a legal identity with expiration and revocation options.</li>
+<li><strong>Pledge Contract</strong>: Milestone-based escrow for service-based payments.</li>
+<li><strong>Asset Paywall</strong>: Enables digital asset sales with pay-to-access logic.</li>
+</ul>
+<h3 id="features"><a class="header" href="#features">Features:</a></h3>
+<ul>
+<li>Conditions encoded in contract logic</li>
+<li>Full automation without intermediaries</li>
+<li>Immutable, tamper-proof execution</li>
+</ul>
+<hr />
+<h2 id="4-blockchain-powered-digital-signatures"><a class="header" href="#4-blockchain-powered-digital-signatures">4. Blockchain-Powered Digital Signatures</a></h2>
+<p>Digital signatures in Contract Foundry are used to validate documents, credentials, and contract interactions. These signatures are cryptographically secure and legally recognized under frameworks like <strong>eIDAS</strong> (EU) and <strong>ESIGN</strong> (US).</p>
+<h3 id="types-of-signatures"><a class="header" href="#types-of-signatures">Types of Signatures:</a></h3>
+<ul>
+<li><strong>Identified Signatures</strong>: Tied to a user’s DID, providing full auditability and legal weight.</li>
+<li><strong>Anonymous Signatures</strong>: Detached from a formal identity, useful for privacy-preserving applications.</li>
+</ul>
+<h3 id="how-it-works"><a class="header" href="#how-it-works">How It Works:</a></h3>
+<ul>
+<li>All signing operations occur locally within the Contract Foundry wallet app.</li>
+<li>Private keys are never transmitted and are stored in encrypted local storage.</li>
+<li>Signed data includes a timestamp and origin proof, creating a verifiable audit trail.</li>
+</ul>
+<hr />
+<h2 id="5-storage--integrity-mechanism"><a class="header" href="#5-storage--integrity-mechanism">5. Storage &amp; Integrity Mechanism</a></h2>
+<p>To maintain the integrity of off-chain data (like documents or credentials), Contract Foundry uses reference hashes stored on-chain.</p>
+<h3 id="supported-storage-types"><a class="header" href="#supported-storage-types">Supported Storage Types:</a></h3>
+<ul>
+<li><strong>IPFS (InterPlanetary File System)</strong>: Content-addressable, decentralized file system.</li>
+<li><strong>Arweave</strong>: Permanent, blockchain-based storage with transaction ID references.</li>
+<li><strong>User-Hosted URIs</strong>: Centralized storage maintained by the user, with integrity protected via immutable references.</li>
+</ul>
+<p>This hybrid approach ensures flexibility in storage while guaranteeing authenticity and tamper detection.</p>
+<hr />
+<h2 id="6-self-sovereignty-and-data-ownership"><a class="header" href="#6-self-sovereignty-and-data-ownership">6. Self-Sovereignty and Data Ownership</a></h2>
+<p>A central philosophy behind Contract Foundry is <strong>self-sovereignty</strong>, users fully own their data, identities and assets.</p>
+<ul>
+<li><strong>No Custody of Keys</strong>: The platform never stores user private keys.</li>
+<li><strong>Encrypted Local Storage</strong>: All data resides securely on the user’s mobile device.</li>
+</ul>
+<p>This model puts control and trust exactly where it belongs: in the hands of the user.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-platform-services"><a class="header" href="#-platform-services">📘 Platform Services</a></h1>
+<p>Contract Foundry provides a comprehensive suite of decentralized services to manage identities, issue credentials, execute smart contracts, and handle digital signatures—securely and seamlessly through a mobile-first experience. Each service is designed with privacy, scalability, and automation in mind, making the platform both powerful and user-friendly.</p>
+<hr />
+<h2 id="1-android-wallet-dapp-decentralized-wallet-interface"><a class="header" href="#1-android-wallet-dapp-decentralized-wallet-interface">1. Android Wallet dApp (Decentralized Wallet Interface)</a></h2>
+<p>At the heart of Contract Foundry is a <strong>non-custodial Android wallet application</strong>, which acts as the sole interface for all interactions on the platform.</p>
+<h3 id="features-1"><a class="header" href="#features-1">Features:</a></h3>
+<ul>
+<li>Fully decentralized and user-controlled.</li>
+<li>Private keys are stored locally—never transmitted or shared.</li>
+<li>Supports encrypted storage of credentials and identity data.</li>
+<li>All contract deployments and digital signatures are executed on-device.</li>
+<li>Mandatory for using DID, VC, and contract modules.</li>
+</ul>
+<h3 id="compliance--privacy"><a class="header" href="#compliance--privacy">Compliance &amp; Privacy:</a></h3>
+<ul>
+<li>Enforces <strong>GDPR principles</strong>: Users can permanently delete accounts and associated data.</li>
+<li>Once deleted, <strong>subscriptions and account balances are unrecoverable</strong>.</li>
+</ul>
+<hr />
+<h2 id="2-verifiable-document-contracts"><a class="header" href="#2-verifiable-document-contracts">2. Verifiable Document Contracts</a></h2>
+<p>These smart contracts are designed to secure and authenticate digital files—such as certificates, licenses, or compliance documents.</p>
+<h3 id="capabilities-1"><a class="header" href="#capabilities-1">Capabilities:</a></h3>
+<ul>
+<li>Bind files and documents to a blockchain contract using a refrence or identifier (IPFS CID, Arweave TXID, or URI).</li>
+<li>Prevent tampering by making the reference immutable post-deployment.</li>
+<li>Allow optional <strong>expiration and revocation</strong> for time-sensitive documents.</li>
+</ul>
+<h3 id="use-cases-1"><a class="header" href="#use-cases-1">Use Cases:</a></h3>
+<ul>
+<li>Certifying compliance documents</li>
+<li>Publishing legal or academic proofs</li>
+<li>Issuing time-limited digital records</li>
+</ul>
+<hr />
+<h2 id="3-pledge-contracts-trustless-payment-escrow"><a class="header" href="#3-pledge-contracts-trustless-payment-escrow">3. Pledge Contracts (Trustless Payment Escrow)</a></h2>
+<p>The <strong>Pledge Contract</strong> module enables milestone-based, conditional fund transfers between two or more parties—without requiring mutual trust or third-party oversight.</p>
+<h3 id="features-2"><a class="header" href="#features-2">Features:</a></h3>
+<ul>
+<li>Funds lock, protect against unplanned or illegal actions.</li>
+<li>Release is contingent on service completion, confirmed by the customer.</li>
+<li>Supports rollback of funds if service is canceled or rejected.</li>
+<li>Native currency bases on using network is used for all payments.</li>
+</ul>
+<h3 id="use-cases-2"><a class="header" href="#use-cases-2">Use Cases:</a></h3>
+<ul>
+<li>Freelance and service-based industries</li>
+<li>B2B contract work</li>
+<li>Microservices and gig economy platforms</li>
+</ul>
+<hr />
+<h2 id="4-asset-paywall-contracts"><a class="header" href="#4-asset-paywall-contracts">4. Asset Paywall Contracts</a></h2>
+<p>Monetize digital assets securely through smart contracts that grant access only after payment has been confirmed.</p>
+<h3 id="supported-storage"><a class="header" href="#supported-storage">Supported Storage:</a></h3>
+<ul>
+<li>IPFS and Arweave (decentralized, permanent)</li>
+<li>User-hosted file servers (via custom URI)</li>
+</ul>
+<h3 id="functionality"><a class="header" href="#functionality">Functionality:</a></h3>
+<ul>
+<li>User self-host or uploads files, submit their identifier or address as refrence.</li>
+<li>Contract validates payment before revealing file reference.</li>
+</ul>
+<h3 id="use-cases-3"><a class="header" href="#use-cases-3">Use Cases:</a></h3>
+<ul>
+<li>Selling reports, research papers, templates</li>
+<li>Distributing eBooks, licenses, media assets</li>
+</ul>
+<hr />
+<h2 id="5-decentralized-identity-management"><a class="header" href="#5-decentralized-identity-management">5. Decentralized Identity Management</a></h2>
+<p>Users can create and manage <strong>ERC-1056-compliant decentralized identities</strong> directly through the wallet app.</p>
+<h3 id="identity-features"><a class="header" href="#identity-features">Identity Features:</a></h3>
+<ul>
+<li>Create a DID with a single transaction.</li>
+<li>Assign and manage controllers, delegates, and services.</li>
+<li>Load, edit, and update DID Documents from the app.</li>
+<li>Use DID for credential issuance and verification.</li>
+</ul>
+<h3 id="security"><a class="header" href="#security">Security:</a></h3>
+<ul>
+<li>All updates and modifications require local transaction signing.</li>
+<li>History of changes is recorded immutably on the blockchain.</li>
+</ul>
+<hr />
+<h2 id="6-verifiable-credential-issuance"><a class="header" href="#6-verifiable-credential-issuance">6. Verifiable Credential Issuance</a></h2>
+<p>Issue user-centric credentials with full cryptographic integrity using a guided, form-based workflow.</p>
+<h3 id="features-3"><a class="header" href="#features-3">Features:</a></h3>
+<ul>
+<li>Support for standalone and registered credentials.</li>
+<li>Create schema and metadata through structured input.</li>
+<li>Credentials can be stored in the wallet or exported.</li>
+</ul>
+<h3 id="status-management"><a class="header" href="#status-management">Status Management:</a></h3>
+<ul>
+<li>Register credential status (valid, suspended, revoked) directly via the wallet.</li>
+<li>All changes are reflected across future verifications.</li>
+</ul>
+<hr />
+<h2 id="7-verifiable-presentations"><a class="header" href="#7-verifiable-presentations">7. Verifiable Presentations</a></h2>
+<p>Bundle multiple credentials into a <strong>Verifiable Presentation (VP)</strong>, which can be shared as a single digital proof package.</p>
+<h3 id="highlights"><a class="header" href="#highlights">Highlights:</a></h3>
+<ul>
+<li>Present multiple VCs for onboarding or verification.</li>
+<li>Free to generate and manage.</li>
+<li>Stored in wallet and exportable as a file.</li>
+</ul>
+<h3 id="use-cases-4"><a class="header" href="#use-cases-4">Use Cases:</a></h3>
+<ul>
+<li>Job applications requiring multiple qualifications</li>
+<li>Compliance audits</li>
+<li>Digital ID onboarding for services</li>
+</ul>
+<hr />
+<h2 id="8-subscription-tiers"><a class="header" href="#8-subscription-tiers">8. Subscription Tiers</a></h2>
+<p>To access different levels of services, Contract Foundry offers multiple subscription plans:</p>
+<h3 id="plan-levels"><a class="header" href="#plan-levels">Plan Levels:</a></h3>
+<ul>
+<li><strong>Basic</strong>: Starter features for personal use</li>
+<li><strong>Creator</strong>: Designed for freelancers and digital creators</li>
+<li><strong>Agency</strong>: Includes multi-identity support and collaboration tools</li>
+<li><strong>Enterprise</strong>: Custom integrations and strategic consultation</li>
+</ul>
+<h3 id="features-by-tier"><a class="header" href="#features-by-tier">Features by Tier:</a></h3>
+<ul>
+<li>Smart contract deployment limits</li>
+<li>Credential issuance quotas</li>
+<li>Identity registry deployment limits</li>
+<li>Discounts for long-term use</li>
+</ul>
+<hr />
+<p>Contract Foundry's platform services are built to be modular, privacy-focused, and legally compliant—offering end-to-end decentralized operations for businesses, creators, and developers alike.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-how-to-guides"><a class="header" href="#-how-to-guides">📘 How-To Guides</a></h1>
+<p>This section provides step-by-step instructions for using Contract Foundry’s features via the official Android wallet application. All operations—from identity creation to smart contract deployment—are executed locally on your device, ensuring secure, self-sovereign interaction with the blockchain.</p>
+<blockquote>
+<p>⚠️ <strong>Note</strong>: All actions require a funded Ethereum-compatible wallet and an active subscription plan based on your usage needs.</p>
+</blockquote>
+<hr />
+<h2 id="-1-setting-up-your-wallet--private-key"><a class="header" href="#-1-setting-up-your-wallet--private-key">🔐 1. Setting Up Your Wallet &amp; Private Key</a></h2>
+<p>Before using any service, you must initialize your wallet.</p>
+<h3 id="steps"><a class="header" href="#steps">Steps:</a></h3>
+<ol>
+<li><strong>Open the Contract Foundry wallet app</strong>.</li>
+<li>Tap <strong>“Wallet”</strong> and choose:
+<ul>
+<li><strong>Generate New Key</strong> or</li>
+<li><strong>Import Existing Private Key</strong>.</li>
+</ul>
+</li>
+<li>Your key will be securely stored in <strong>encrypted local storage</strong>.</li>
+<li>Fund your wallet with ETH to cover network gas fees.</li>
+<li>(Optional) Set up biometric or passcode protection for local access.</li>
+</ol>
+<hr />
+<h2 id="-2-creating-and-managing-a-decentralized-identity-did"><a class="header" href="#-2-creating-and-managing-a-decentralized-identity-did">🆔 2. Creating and Managing a Decentralized Identity (DID)</a></h2>
+<p>Use this process to register a new blockchain-based identity compliant with ERC-1056 and W3C standards.</p>
+<h3 id="steps-1"><a class="header" href="#steps-1">Steps:</a></h3>
+<img src=images/nav_did.png alt="Alt text" width="200"/>
+<ol>
+<li>Navigate to <strong>“DID”</strong> &gt; Tap <strong>“Create DID”</strong>.</li>
+</ol>
+<img src=images/did_info.png alt="Alt text" width="200"/>
+<ol start="2">
+<li>Fill in the <strong>DID name</strong>, <strong>network</strong>, and public informations.</li>
+<li>Tap <strong>“Continue”</strong> and sign the transaction with your private key.</li>
+</ol>
+<img src=images/init_did.png alt="Alt text" width="200"/>
+<img src=images/did_init_history.png alt="Alt text" width="200"/>
+<ol start="4">
+<li>Once deployed, in history page and issuance tile tap <strong>“Initialize &amp; setup”</strong> to activate it.</li>
+</ol>
+<img src=images/did_page.png alt="Alt text" width="200"/>
+<img src=images/diddoc_load.png alt="Alt text" width="200"/>
+<img src=images/diddoc.png alt="Alt text" width="200"/>
+<ol start="5">
+<li>Manage controllers, delegates, and services from the DID dashboard.</li>
+</ol>
+<hr />
+<h2 id="-3-deploying-a-smart-contract"><a class="header" href="#-3-deploying-a-smart-contract">🧾 3. Deploying a Smart Contract</a></h2>
+<p>You can deploy multiple types of contracts using guided forms—no coding required.</p>
+<h3 id="steps-2"><a class="header" href="#steps-2">Steps:</a></h3>
+<ol>
+<li>
+<p>Go to <strong>“Contracts”</strong> &gt; Select a contract type:</p>
+<ul>
+<li>Verifiable Document</li>
+<li>Pledge</li>
+<li>Asset Paywall</li>
+</ul>
+</li>
+<li>
+<p>Fill out the form with necessary details (title, reference, pricing, etc.).</p>
+</li>
+<li>
+<p>Tap <strong>“Deploy Contract”</strong> and confirm the transaction.</p>
+</li>
+<li>
+<p>Once confirmed, go to <strong>“History”</strong> and tap <strong>“Initialize”</strong> to activate the contract.</p>
+</li>
+<li>
+<p>Share the <strong>Contract DID</strong> with relevant parties to interact.</p>
+</li>
+</ol>
+<hr />
+<h2 id="-4-issuing-a-verifiable-credential-vc"><a class="header" href="#-4-issuing-a-verifiable-credential-vc">📜 4. Issuing a Verifiable Credential (VC)</a></h2>
+<p>Create tamper-proof credentials for yourself or others using a visual editor.</p>
+<h3 id="steps-3"><a class="header" href="#steps-3">Steps:</a></h3>
+<img src=images/vc_page.png alt="Alt text" width="200"/>
+<ol>
+<li>Go to <strong>“Credentials”</strong> &gt; Tap <strong>“New Verifiable Entity”</strong>.</li>
+</ol>
+<img src=images/vc_page_dialog.png alt="Alt text" width="200"/>
+<ol start="2">
+<li>Select <strong>“Credential”</strong> as the entity type.</li>
+</ol>
+<img src=images/vc_form.png alt="Alt text" width="200"/>
+<ol start="3">
+<li>Enter the <strong>issuer DID</strong> (your identity or a key-based DID).</li>
+</ol>
+<img src=images/vc_subject_field_dialog.png alt="Alt text" width="200"/>
+<img src=images/vc_subject_page.png alt="Alt text" width="200"/>
+<ol start="4">
+<li>Define the <strong>credential subject</strong>, <strong>schema</strong>, and optional metadata.</li>
+<li>Tap <strong>“Generate Credential”</strong> and sign with your private key.</li>
+</ol>
+<blockquote>
+<p>✅ The credential will appear in your wallet and can be exported.</p>
+</blockquote>
+<hr />
+<h2 id="-5-verifying-or-updating-a-credential"><a class="header" href="#-5-verifying-or-updating-a-credential">✅ 5. Verifying or Updating a Credential</a></h2>
+<p>Verify the authenticity of a credential or update its status.</p>
+<h3 id="to-verify-a-credential"><a class="header" href="#to-verify-a-credential">To Verify a Credential:</a></h3>
+<img src=images/vc_page2.png alt="Alt text" width="200"/>
+<ol>
+<li>Open the credential from your <strong>VC list</strong>.</li>
+</ol>
+<img src=images/vc_page_dialog.png alt="Alt text" width="200"/>
+<img src=images/vc_display.png alt="Alt text" width="200"/>
+<ol start="2">
+<li>Tap <strong>“Verify”</strong> from the top-right menu.</li>
+<li>Input the <strong>signer DID</strong> and your <strong>private key</strong> to confirm.</li>
+</ol>
+<img src=images/verified_vc_display.png alt="Alt text" width="200"/>
+<ol start="4">
+<li>Verification proof will be appended to the VC.</li>
+</ol>
+<h3 id="to-update-credential-status"><a class="header" href="#to-update-credential-status">To Update Credential Status:</a></h3>
+<ol>
+<li>Tap <strong>“More”</strong> &gt; <strong>“Update Status”</strong>.</li>
+<li>Select one of the following: <strong>Valid</strong>, <strong>Suspended</strong>, <strong>Revoked</strong>.</li>
+<li>Sign the transaction with your private key.</li>
+</ol>
+<blockquote>
+<p>📝 Only the issuer DID can perform status updates.</p>
+</blockquote>
+<hr />
+<h2 id="-6-using-the-pledge-contract-escrow"><a class="header" href="#-6-using-the-pledge-contract-escrow">💰 6. Using the Pledge Contract (Escrow)</a></h2>
+<p>Perfect for freelancers, service providers, and milestone-based payment agreements.</p>
+<h3 id="for-service-providers"><a class="header" href="#for-service-providers">For Service Providers:</a></h3>
+<ol>
+<li>Go to <strong>“Contracts”</strong> &gt; <strong>“Pledge Contract”</strong>.</li>
+</ol>
+<img src=images/pledge_form.png alt="Alt text" width="200"/>
+<ol start="2">
+<li>Fill in service details, total cost in chosen network currency in (WEI) unit.</li>
+</ol>
+<img src=images/init_pledge.png alt="Alt text" width="200"/>
+<ol start="3">
+<li>Deploy and initialize the contract.</li>
+</ol>
+<img src=images/pledge_info.png alt="Alt text" width="200"/>
+<img src=images/load_pledge.png alt="Alt text" width="200"/>
+<br/>
+<img src=images/pledge_page.png alt="Alt text" width="200"/>
+<img src=images/pledge_options.png alt="Alt text" width="200"/>
+<ol start="4">
+<li>Share the <strong>Contract DID</strong> with the customer.</li>
+</ol>
+<h3 id="for-customers"><a class="header" href="#for-customers">For Customers:</a></h3>
+<ol>
+<li>Open the contract using the shared DID.</li>
+<li>Submit payments per milestone or full upfront.</li>
+<li>Confirm <strong>“Service Complete”</strong> when work is finished.</li>
+</ol>
+<blockquote>
+<p>🔐 Funds are locked until the customer approves service completion.</p>
+</blockquote>
+<hr />
+<h2 id="-7-creating-a-verifiable-presentation-vp"><a class="header" href="#-7-creating-a-verifiable-presentation-vp">📂 7. Creating a Verifiable Presentation (VP)</a></h2>
+<p>Combine multiple VCs into a single presentation file.</p>
+<h3 id="steps-4"><a class="header" href="#steps-4">Steps:</a></h3>
+<ol>
+<li>Go to <strong>“Credentials”</strong> &gt; Tap <strong>“New Verifiable Entity”</strong>.</li>
+<li>Enter the <strong>issuer DID</strong> (your identity or a key-based DID).</li>
+<li>Select VCs from your list.</li>
+<li>Tap <strong>“Create Presentation”</strong> and sign.</li>
+<li>The presentation is stored in your wallet and can be exported manually.</li>
+</ol>
+<hr />
+<h2 id="-8-exporting-and-sharing-documents"><a class="header" href="#-8-exporting-and-sharing-documents">📦 8. Exporting and Sharing Documents</a></h2>
+<p>All credentials, presentations, and document references can be exported as JSON files.</p>
+<h3 id="to-export"><a class="header" href="#to-export">To Export:</a></h3>
+<ol>
+<li>Open the item from the dashboard.</li>
+<li>Tap <strong>“Export”</strong> &gt; Choose location or sharing method.</li>
+</ol>
+<h3 id="sharing-options"><a class="header" href="#sharing-options">Sharing Options:</a></h3>
+<ul>
+<li>Share file manually via email or messaging apps.</li>
+<li>Upload to IPFS or Arweave for decentralized access (optional).</li>
+</ul>
+<hr />
+<p>These guides are designed to help both new and experienced users confidently navigate and utilize the full suite of Contract Foundry services through the mobile app. For troubleshooting or in-app help, refer to the <strong>Support</strong> or <strong>FAQ</strong> section in the main menu.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-use-cases"><a class="header" href="#-use-cases">📘 Use Cases</a></h1>
+<p>Contract Foundry empowers a wide range of industries and user types by providing decentralized tools for digital identity, credentialing, contract automation, and secure payments. Its infrastructure supports both individual and enterprise needs, enabling secure, legally compliant, and trustless interactions in the digital ecosystem.</p>
+<p>Below are key real-world scenarios where Contract Foundry adds measurable value:</p>
+<hr />
+<h2 id="1--freelance--service-based-payments-b2cc2c"><a class="header" href="#1--freelance--service-based-payments-b2cc2c">1. ✅ Freelance &amp; Service-Based Payments (B2C/C2C)</a></h2>
+<p><strong>Problem</strong>: Freelancers often face delayed or denied payments due to lack of trust or enforceable agreements with clients.</p>
+<p><strong>Solution</strong>: Use the <strong>Pledge Contract</strong> to establish milestone-based or escrow-style agreements. Funds are locked when the contract is initialized and released only when the customer confirms service completion.</p>
+<p><strong>Benefits</strong>:</p>
+<ul>
+<li>No third-party needed</li>
+<li>Clear, trustless payment flow</li>
+<li>Milestone-based fund release</li>
+</ul>
+<hr />
+<h2 id="2--academic-credential-issuance-education-sector"><a class="header" href="#2--academic-credential-issuance-education-sector">2. 🎓 Academic Credential Issuance (Education Sector)</a></h2>
+<p><strong>Problem</strong>: Educational institutions struggle with issuing and verifying academic records securely and globally.</p>
+<p><strong>Solution</strong>: Schools and universities can deploy <strong>Verifiable Documents</strong> or issue <strong>Verifiable Credentials (VCs)</strong> tied to a student's decentralized identity. These credentials are tamper-proof and cryptographically signed.</p>
+<p><strong>Benefits</strong>:</p>
+<ul>
+<li>Global verification without manual validation</li>
+<li>Elimination of credential fraud</li>
+<li>Simplified cross-institution recognition</li>
+</ul>
+<hr />
+<h2 id="3--cross-border-legal-signatures-b2b"><a class="header" href="#3--cross-border-legal-signatures-b2b">3. 📝 Cross-Border Legal Signatures (B2B)</a></h2>
+<p><strong>Problem</strong>: Signing contracts across jurisdictions is often legally complex and time-consuming.</p>
+<p><strong>Solution</strong>: Use <strong>Verifiable Documents</strong> that is immutable and contains <strong>Blockchain-Powered Digital Signatures</strong> that are eIDAS and ESIGN compliant to sign agreements with full legal validity.</p>
+<p><strong>Benefits</strong>:</p>
+<ul>
+<li>Faster contract turnaround</li>
+<li>Immutable signature audit trail</li>
+<li>Global compliance</li>
+</ul>
+<hr />
+<h2 id="4--digital-content-monetization-for-creators"><a class="header" href="#4--digital-content-monetization-for-creators">4. 📄 Digital Content Monetization (For Creators)</a></h2>
+<p><strong>Problem</strong>: Independent creators lack secure and scalable ways to monetize digital files (e.g., reports, templates, PDFs).</p>
+<p><strong>Solution</strong>: Use the <strong>Asset Paywall Contract</strong> to sell content with blockchain-verified payments and access control.</p>
+<p><strong>Benefits</strong>:</p>
+<ul>
+<li>Self-hosted or decentralized file storage (IPFS/Arweave)</li>
+<li>Tamper-proof file references</li>
+<li>No need for platform-based distribution</li>
+</ul>
+<hr />
+<h2 id="5--identity-verification-for-platform-onboarding"><a class="header" href="#5--identity-verification-for-platform-onboarding">5. 🆔 Identity Verification for Platform Onboarding</a></h2>
+<p><strong>Problem</strong>: Businesses often need to verify identity and background during onboarding, increasing manual overhead.</p>
+<p><strong>Solution</strong>: Accept <strong>Verifiable Presentations</strong> from users, which combine multiple credentials into a single portable document.</p>
+<p><strong>Benefits</strong>:</p>
+<ul>
+<li>Automated verification</li>
+<li>Reduced KYC overhead</li>
+<li>Enhanced data privacy for users</li>
+</ul>
+<hr />
+<h2 id="6--agency--team-credential-management"><a class="header" href="#6--agency--team-credential-management">6. 🛠️ Agency &amp; Team Credential Management</a></h2>
+<p><strong>Problem</strong>: Agencies managing multiple employees need a scalable way to issue and verify qualifications internally and externally.</p>
+<p><strong>Solution</strong>: Admins issue VCs to team members and manage credentials statuses using the mobile wallet app.</p>
+<p><strong>Benefits</strong>:</p>
+<ul>
+<li>Role-based access control via DID delegates</li>
+<li>Scalable, verifiable credentialing</li>
+<li>Internal trust systems without a central database</li>
+</ul>
+<hr />
+<h2 id="7--compliance-in-regulated-industries"><a class="header" href="#7--compliance-in-regulated-industries">7. 🧾 Compliance in Regulated Industries</a></h2>
+<p><strong>Problem</strong>: Industries such as healthcare, finance, and supply chain require compliance-proof documentation.</p>
+<p><strong>Solution</strong>: Use <strong>Verifiable Document Contracts</strong> to store and verify policies, licenses, or certifications in a tamper-proof format.</p>
+<p><strong>Benefits</strong>:</p>
+<ul>
+<li>Time-stamped blockchain proof</li>
+<li>Traceable document updates and expirations</li>
+<li>Easy sharing with auditors or partners</li>
+</ul>
+<hr />
+<h2 id="8--gdpr-compliant-account-lifecycle-management"><a class="header" href="#8--gdpr-compliant-account-lifecycle-management">8. 🗑️ GDPR-Compliant Account Lifecycle Management</a></h2>
+<p><strong>Problem</strong>: Users increasingly demand control over their digital data and identity lifecycle.</p>
+<p><strong>Solution</strong>: Through the Android wallet, users can <strong>delete their entire account and data footprint</strong> in compliance with GDPR principles.</p>
+<p><strong>Benefits</strong>:</p>
+<ul>
+<li>Full data sovereignty</li>
+<li>Trust built through transparency</li>
+<li>No backdoors or data recovery post-deletion</li>
+</ul>
+<hr />
+<p>Contract Foundry adapts to diverse environments, offering practical solutions to digital trust, identity, and automation problems. Its modular architecture ensures each user—from solo entrepreneurs to large enterprises—can deploy secure, blockchain-backed workflows tailored to their needs.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-pricing--subscription"><a class="header" href="#-pricing--subscription">📘 Pricing &amp; Subscription</a></h1>
+<p>Contract Foundry offers a flexible and transparent pricing model that caters to individuals, professionals, teams, and large enterprises. Users can choose from various subscription plans based on their needs, all while maintaining full sovereignty over their identities, data, and blockchain transactions.</p>
+<p>This section outlines how billing, service access, and subscriptions are structured.</p>
+<hr />
+<h2 id="-1-subscription-tiers"><a class="header" href="#-1-subscription-tiers">💳 1. Subscription Tiers</a></h2>
+<p>Each subscription plan unlocks different features and usage limits across identity management, smart contracts, verifiable credentials, and document workflows.</p>
+<h3 id="-basic"><a class="header" href="#-basic">🔹 Basic</a></h3>
+<ul>
+<li>Designed for individuals testing or using minimal services.</li>
+<li>Access to identity creation, credential viewing, and basic contract templates.</li>
+<li>Limited VC issuance and contract deployments.</li>
+</ul>
+<h3 id="-creator"><a class="header" href="#-creator">🔹 Creator</a></h3>
+<ul>
+<li>Tailored for freelancers, digital artists, and content sellers.</li>
+<li>Supports paywall contracts and full credential issuance.</li>
+<li>Includes priority app support and storage integrations.</li>
+</ul>
+<h3 id="-agency"><a class="header" href="#-agency">🔹 Agency</a></h3>
+<ul>
+<li>Built for small-to-medium teams or consulting groups.</li>
+<li>More pledge contarcts.</li>
+<li>Increased quotas and API support (coming soon).</li>
+</ul>
+<h3 id="-enterprise"><a class="header" href="#-enterprise">🔹 Enterprise</a></h3>
+<ul>
+<li>
+<p>More Verifiable documents for business legal contracts</p>
+</li>
+<li>
+<p>Customized plans for large organizations, institutions, or regulated industries.</p>
+</li>
+<li>
+<p>Includes all Agency features plus:</p>
+<ul>
+<li>Dedicated support channel</li>
+<li>Integration assistance</li>
+<li>consultation and can order custome subscriptions too</li>
+</ul>
+</li>
+<li>
+<p>Requires direct contact for plan negotiation and provisioning.</p>
+</li>
+</ul>
+<hr />
+<h2 id="-2-account-charging-system-wei-credits"><a class="header" href="#-2-account-charging-system-wei-credits">🧾 2. Account Charging System (WEI Credits)</a></h2>
+<p>Contract Foundry uses an internal <strong>credit-based system</strong> denominated in WEI (the smallest unit of ETH) to track service usage.</p>
+<h3 id="how-it-works-1"><a class="header" href="#how-it-works-1">How It Works:</a></h3>
+<ul>
+<li>
+<p>Users <strong>preload credits</strong> into their platform account (non-custodial and tracked via wallet metadata).</p>
+</li>
+<li>
+<p>Credits are used for internal operations such as:</p>
+<ul>
+<li>Smart contract deployments</li>
+<li>Credential generation</li>
+<li>Subscription activation</li>
+</ul>
+</li>
+<li>
+<p>Credit deductions are transparent and viewable in the wallet app history.</p>
+</li>
+</ul>
+<blockquote>
+<p>⚠️ Note: These internal credits do not pay for blockchain gas fees (see next section).</p>
+</blockquote>
+<hr />
+<h2 id="-3-blockchain-gas-fees"><a class="header" href="#-3-blockchain-gas-fees">⛽ 3. Blockchain Gas Fees</a></h2>
+<p>Gas fees—used to process transactions on the blockchain—are <strong>paid directly from the user’s ETH wallet</strong>. These are separate from subscription costs.</p>
+<h3 id="key-points"><a class="header" href="#key-points">Key Points:</a></h3>
+<ul>
+<li>Users must maintain an ETH balance in their wallet.</li>
+<li>Every interaction requiring a transaction (e.g., deploy contract, update DID) incurs a gas fee.</li>
+<li>Contract Foundry does <strong>not</strong> control or markup network fees.</li>
+</ul>
+<hr />
+<h2 id="-4-billing-frequency-and-plan-duration"><a class="header" href="#-4-billing-frequency-and-plan-duration">🔁 4. Billing Frequency and Plan Duration</a></h2>
+<p>Subscriptions can be activated and extended directly through the Android wallet interface.</p>
+<h3 id="options"><a class="header" href="#options">Options:</a></h3>
+<ul>
+<li><strong>Monthly</strong> and <strong>Annual</strong> plans</li>
+<li>Auto-expiration with option to renew</li>
+<li>Discount tiers for longer commitments</li>
+</ul>
+<p>Enterprise customers may request:</p>
+<ul>
+<li>Invoiced billing cycles</li>
+<li>Bulk seat licenses</li>
+<li>Volume discounts based on contract and credential activity</li>
+</ul>
+<hr />
+<h2 id="-5-account-deletion-and-refund-policy"><a class="header" href="#-5-account-deletion-and-refund-policy">🗑️ 5. Account Deletion and Refund Policy</a></h2>
+<p>Contract Foundry adheres to a <strong>strict non-recoverability policy</strong> to align with GDPR principles.</p>
+<h3 id="terms"><a class="header" href="#terms">Terms:</a></h3>
+<ul>
+<li>Deleting your wallet/account removes all data permanently.</li>
+<li>Any remaining credit balance or active subscription is <strong>non-refundable</strong> and <strong>non-recoverable</strong>.</li>
+<li>This policy ensures data privacy and eliminates platform-side custody.</li>
+</ul>
+<hr />
+<h2 id="-6-support-and-upgrades"><a class="header" href="#-6-support-and-upgrades">💬 6. Support and Upgrades</a></h2>
+<ul>
+<li>Users can view their current plan and usage from the app.</li>
+<li>Plan upgrades are applied instantly upon payment.</li>
+<li>Community chat or email support is available depending on tier.</li>
+</ul>
+<hr />
+<p>Contract Foundry’s pricing is designed to be fair, modular, and scalable—from individuals issuing personal credentials to enterprises automating document workflows and trustless payments. Our goal is to provide cutting-edge decentralized services with predictable and transparent cost structures.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-security--privacy-model"><a class="header" href="#-security--privacy-model">📘 Security &amp; Privacy Model</a></h1>
+<p>Security and privacy are foundational principles of the Contract Foundry platform. Every interaction—whether it involves deploying a contract, signing a document, or verifying a credential—is built to preserve user sovereignty, ensure data confidentiality, and protect against unauthorized access or tampering.</p>
+<hr />
+<h2 id="-1-non-custodial-architecture"><a class="header" href="#-1-non-custodial-architecture">🔐 1. Non-Custodial Architecture</a></h2>
+<p>Contract Foundry is designed as a <strong>fully non-custodial platform</strong>. Users maintain complete control over their private keys, identities, credentials, and funds at all times.</p>
+<h3 id="key-elements"><a class="header" href="#key-elements">Key Elements:</a></h3>
+<ul>
+<li><strong>Private Keys</strong> are never stored, shared, or transmitted.</li>
+<li><strong>All signing actions</strong> are executed locally on the user's device.</li>
+<li><strong>Wallet encryption</strong> is built into the official Android wallet app.</li>
+</ul>
+<p>This model ensures that the platform itself never has access to sensitive user assets or data.</p>
+<hr />
+<h2 id="-2-encrypted-local-storage"><a class="header" href="#-2-encrypted-local-storage">🔒 2. Encrypted Local Storage</a></h2>
+<p>The official Android wallet app stores all user data—including private keys, credentials, and contract records—in an encrypted format.</p>
+<h3 id="technical-safeguards"><a class="header" href="#technical-safeguards">Technical Safeguards:</a></h3>
+<ul>
+<li>Uses secure device storage APIs.</li>
+<li>Supports biometric or passcode locking for local access.</li>
+<li>Data remains fully offline unless manually exported.</li>
+</ul>
+<p>This guarantees that even if the app is compromised, encrypted user data remains secure and unreadable.</p>
+<hr />
+<h2 id="-3-secure-on-chain-transactions"><a class="header" href="#-3-secure-on-chain-transactions">📡 3. Secure On-Chain Transactions</a></h2>
+<p>All blockchain interactions (e.g., contract deployments, status updates, identity changes) are signed locally and sent to the blockchain only after the user explicitly authorizes the transaction.</p>
+<h3 id="protection-measures"><a class="header" href="#protection-measures">Protection Measures:</a></h3>
+<ul>
+<li>Users must approve each transaction with their private key.</li>
+<li>Transactions cannot be forged or replayed.</li>
+<li>Full transparency via blockchain explorers.</li>
+</ul>
+<hr />
+<h2 id="-4-immutability--tamper-detection"><a class="header" href="#-4-immutability--tamper-detection">🧾 4. Immutability &amp; Tamper Detection</a></h2>
+<p>Once deployed or issued, contract data and credential references become <strong>immutable</strong>. Any attempt to alter or falsify this information can be easily detected through cryptographic verification.</p>
+<h3 id="technologies-used"><a class="header" href="#technologies-used">Technologies Used:</a></h3>
+<ul>
+<li>IPFS / Arweave for tamper-proof file referencing.</li>
+<li>DID-based proof metadata for verifying authenticity.</li>
+<li>Verifiable audit trails available on-chain.</li>
+</ul>
+<hr />
+<h2 id="-5-legal-and-standards-compliance"><a class="header" href="#-5-legal-and-standards-compliance">📜 5. Legal and Standards Compliance</a></h2>
+<p>Contract Foundry is engineered to meet international standards for digital identity and electronic signatures.</p>
+<h3 id="supported-frameworks"><a class="header" href="#supported-frameworks">Supported Frameworks:</a></h3>
+<ul>
+<li><strong>eIDAS</strong>: Recognized digital signatures within the EU.</li>
+<li><strong>ESIGN</strong>: U.S. standard for electronic contracts and records.</li>
+<li><strong>W3C DID &amp; VC</strong>: Interoperable decentralized identity and verifiable credentials.</li>
+<li><strong>GDPR</strong>: Privacy-by-design system with full data deletion capability.</li>
+</ul>
+<hr />
+<h2 id="-6-gdpr-compliant-data-handling"><a class="header" href="#-6-gdpr-compliant-data-handling">🗑️ 6. GDPR-Compliant Data Handling</a></h2>
+<p>The platform respects users’ right to <strong>control and erase their data</strong>. Users can permanently delete their accounts, associated DIDs (DID termination wont effects on generated signatures), and all stored credentials via the Android app.</p>
+<h3 id="key-principles-1"><a class="header" href="#key-principles-1">Key Principles:</a></h3>
+<ul>
+<li><strong>Right to Be Forgotten</strong>: Users can self-initiate irreversible data deletion.</li>
+<li><strong>No Backups or Recovery</strong>: Once deleted, data—including subscriptions and account balance—cannot be restored.</li>
+<li><strong>No Central Logging</strong>: The platform stores no off-chain personal metadata.</li>
+</ul>
+<p>This strict compliance ensures that users are always in full control of their identity and digital footprint.</p>
+<hr />
+<h2 id="-7-zero-third-party-risk"><a class="header" href="#-7-zero-third-party-risk">🛡️ 7. Zero Third-Party Risk</a></h2>
+<p>Contract Foundry introduces <strong>no third-party intermediaries</strong> at any point in user workflows. All interactions are peer-to-peer or self-directed using open blockchain protocols.</p>
+<h3 id="risk-mitigation"><a class="header" href="#risk-mitigation">Risk Mitigation:</a></h3>
+<ul>
+<li>No central custody of user funds or identity.</li>
+<li>No hidden APIs transmitting data to external services.</li>
+<li>Trust is placed only in the open-source cryptographic standards.</li>
+</ul>
+<hr />
+<h2 id="-8-ongoing-security-audits-and-hardening"><a class="header" href="#-8-ongoing-security-audits-and-hardening">🧠 8. Ongoing Security Audits and Hardening</a></h2>
+<p>The platform’s smart contracts and key modules undergo routine security assessments and audits. Updates follow a strict versioning and changelog process, with a focus on transparency and user trust.</p>
+<h3 id="practices"><a class="header" href="#practices">Practices:</a></h3>
+<ul>
+<li>Periodic smart contract audits by external firms.</li>
+<li>Responsible disclosure policy for vulnerabilities.</li>
+<li>Cryptographic updates as standards evolve.</li>
+</ul>
+<hr />
+<p>By merging strong encryption, decentralized identity, legal compliance, and user-centric design, Contract Foundry sets a high bar for trust and security in blockchain-powered business interactions.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-compliance--legal"><a class="header" href="#-compliance--legal">📘 Compliance &amp; Legal</a></h1>
+<p>Contract Foundry is a decentralized platform designed to put users in full control of their digital identities, credentials, contracts, and assets. As such, the platform itself operates without centralized oversight, data collection, or enforcement authority. While it adheres to global technical standards for privacy and legality, <strong>users are solely responsible for ensuring their use of the platform complies with their local laws and regulations</strong>.</p>
+<hr />
+<h2 id="-1-jurisdiction--legal-independence"><a class="header" href="#-1-jurisdiction--legal-independence">⚖️ 1. Jurisdiction &amp; Legal Independence</a></h2>
+<p>Contract Foundry is a globally accessible decentralized system. It does not operate under the regulatory framework of any single country, state, or legal jurisdiction.</p>
+<h3 id="user-responsibilities"><a class="header" href="#user-responsibilities">User Responsibilities:</a></h3>
+<ul>
+<li><strong>Users must comply with the laws applicable in their own region</strong>, including but not limited to those concerning digital contracts, identity management, and data protection.</li>
+<li><strong>Contract Foundry does not provide legal advice</strong> and is not liable for unlawful use of the platform.</li>
+<li>It is the sole responsibility of each user to consult legal counsel if they are unsure of local compliance requirements.</li>
+</ul>
+<hr />
+<h2 id="-2-age-restriction"><a class="header" href="#-2-age-restriction">🔞 2. Age Restriction</a></h2>
+<p>To ensure responsible and legally valid usage, users of Contract Foundry must be <strong>at least 22 years old</strong>.</p>
+<h3 id="rationale"><a class="header" href="#rationale">Rationale:</a></h3>
+<ul>
+<li>The platform deals with legal and financial interactions that may have real-world consequences.</li>
+<li>Users must possess the legal maturity to manage contracts, credentials, and digital assets independently.</li>
+</ul>
+<hr />
+<h2 id="-3-user-data--key-management"><a class="header" href="#-3-user-data--key-management">🔐 3. User Data &amp; Key Management</a></h2>
+<p>Contract Foundry follows a <strong>strict self-custody model</strong> for identity, keys, and data. It does not store, manage, or back up any user data or keys.</p>
+<h3 id="important-disclaimers"><a class="header" href="#important-disclaimers">Important Disclaimers:</a></h3>
+<ul>
+<li><strong>Users are entirely responsible for backing up their private keys and credentials.</strong></li>
+<li>If a user deletes or clears their data (via device reset, uninstallation, or manual deletion), that data is <strong>irretrievably lost</strong>.</li>
+<li>The platform has <strong>no cloud backed recovery mechanisms</strong>, aligning with its privacy-first, non-custodial design.</li>
+</ul>
+<hr />
+<h2 id="-4-nsfw-and-illegal-content-prohibition"><a class="header" href="#-4-nsfw-and-illegal-content-prohibition">📄 4. NSFW and Illegal Content Prohibition</a></h2>
+<p>The <strong>Asset Paywall</strong> feature of Contract Foundry may not be used to monetize or distribute:</p>
+<ul>
+<li>Sexually explicit material (NSFW)</li>
+<li>Child exploitation content</li>
+<li>Hate speech or incitement to violence</li>
+<li>Any material that is illegal under applicable local or international law</li>
+</ul>
+<h3 id="platform-position"><a class="header" href="#platform-position">Platform Position:</a></h3>
+<ul>
+<li>Contract Foundry does <strong>not host or monitor content</strong>, and cannot enforce restrictions in a decentralized environment.</li>
+<li><strong>Responsibility lies fully with the content creator</strong> to ensure they do not use the platform for prohibited or unlawful purposes.</li>
+</ul>
+<hr />
+<h2 id="-5-legal-frameworks-supported"><a class="header" href="#-5-legal-frameworks-supported">📜 5. Legal Frameworks Supported</a></h2>
+<p>While Contract Foundry itself is jurisdiction-agnostic, it adheres to <strong>technical and legal standards</strong> for digital identity and electronic signatures:</p>
+<h3 id="standards-alignment"><a class="header" href="#standards-alignment">Standards Alignment:</a></h3>
+<ul>
+<li><strong>eIDAS</strong>: European standard for qualified and advanced digital signatures.</li>
+<li><strong>ESIGN</strong>: U.S. law governing legally binding electronic records and signatures.</li>
+<li><strong>W3C DID &amp; VC</strong>: Industry-recognized specifications for decentralized identity and verifiable credentials.</li>
+<li><strong>GDPR (by design)</strong>: No personal data collection, and full support for permanent account deletion.</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>Contract Foundry does not guarantee legal validity of transactions in any jurisdiction.</strong> Users are advised to verify the enforceability of digital documents under local law.</p>
+</blockquote>
+<hr />
+<h2 id="-6-liability-disclaimer"><a class="header" href="#-6-liability-disclaimer">🚫 6. Liability Disclaimer</a></h2>
+<p>By using the Contract Foundry platform, users acknowledge and accept the following:</p>
+<ul>
+<li>
+<p>Contract Foundry <strong>is not responsible</strong> for:</p>
+<ul>
+<li>Loss or theft of private keys</li>
+<li>Deletion or loss of user data</li>
+<li>Failure to comply with local legal standards</li>
+<li>Any financial or legal disputes arising from smart contract usage</li>
+</ul>
+</li>
+<li>
+<p>All actions taken using the app are the user’s sole responsibility.</p>
+</li>
+<li>
+<p>Any irreversible blockchain transaction made through the platform is permanent and cannot be undone by Contract Foundry.</p>
+</li>
+</ul>
+<hr />
+<p>Contract Foundry’s role is to provide an decentralized infrastructure, with great control comes great responsibility. Users must operate with integrity, caution, and full awareness of their legal environment.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-frequently-asked-questions-faq"><a class="header" href="#-frequently-asked-questions-faq">📘 Frequently Asked Questions (FAQ)</a></h1>
+<p>This section addresses the most common questions from users about using Contract Foundry. If you're new to the platform or looking for clarity on specific features, you'll likely find answers here.</p>
+<hr />
+<h3 id="-q1-what-happens-if-i-lose-my-private-key"><a class="header" href="#-q1-what-happens-if-i-lose-my-private-key">🔐 Q1: What happens if I lose my private key?</a></h3>
+<p><strong>A:</strong> If you lose your private key, you lose access to your identity, contracts, and credentials. Contract Foundry is a fully non-custodial platform, which means we do not store or back up any keys. It is the user’s responsibility to securely back up and protect their keys offline.</p>
+<hr />
+<h3 id="-q2-can-i-recover-my-data-if-i-delete-my-account-or-app"><a class="header" href="#-q2-can-i-recover-my-data-if-i-delete-my-account-or-app">🗑️ Q2: Can I recover my data if I delete my account or app?</a></h3>
+<p><strong>A:</strong> No. Once deleted, all user data including user account balance and active subscription are permanently erased. This is intentional to comply with GDPR and to preserve self-sovereignty. Always back up your data and keys before clearing or uninstalling the app.</p>
+<hr />
+<h3 id="-q3-is-the-android-wallet-required-to-use-the-platform"><a class="header" href="#-q3-is-the-android-wallet-required-to-use-the-platform">📲 Q3: Is the Android wallet required to use the platform?</a></h3>
+<p><strong>A:</strong> Yes. The official Android wallet dApp is the only supported interface for interacting with Contract Foundry services. It is where you manage your private keys, deploy contracts, issue credentials, and store all your identity-related data.</p>
+<hr />
+<h3 id="-q4-who-can-use-contract-foundry"><a class="header" href="#-q4-who-can-use-contract-foundry">👤 Q4: Who can use Contract Foundry?</a></h3>
+<p><strong>A:</strong> Contract Foundry is available globally to users who are <strong>22 years of age or older</strong>. Users must also take full responsibility for adhering to their local laws and regulations when using the platform.</p>
+<hr />
+<h3 id="-q5-are-blockchain-transactions-free"><a class="header" href="#-q5-are-blockchain-transactions-free">🧾 Q5: Are blockchain transactions free?</a></h3>
+<p><strong>A:</strong> No. Any action that interacts with the blockchain—such as deploying a contract or updating a contract state or transfaring fund—requires the user to pay a <strong>gas fee in ETH</strong> from their wallet. Contract Foundry does not control or collect these fees.</p>
+<hr />
+<h3 id="-q6-whats-the-difference-between-platform-credits-wei-and-gas-fees"><a class="header" href="#-q6-whats-the-difference-between-platform-credits-wei-and-gas-fees">💳 Q6: What’s the difference between platform credits (WEI) and gas fees?</a></h3>
+<p><strong>A:</strong> Platform credits (denominated in WEI) are used to track your usage of Contract Foundry services (e.g., credential creation, smart contract deployment). Gas fees are separate and paid directly to the Ethereum network from your wallet to process blockchain transactions.</p>
+<hr />
+<h3 id="-q7-can-anyone-view-or-verify-my-credentials"><a class="header" href="#-q7-can-anyone-view-or-verify-my-credentials">📄 Q7: Can anyone view or verify my credentials?</a></h3>
+<p><strong>A:</strong> Only if you share them. Verifiable Credentials (VCs) and Presentations are stored in your wallet and can be exported as files. They are not publicly published unless you choose to distribute them.</p>
+<hr />
+<h3 id="-q8-can-i-use-the-asset-paywall-for-any-type-of-content"><a class="header" href="#-q8-can-i-use-the-asset-paywall-for-any-type-of-content">🚫 Q8: Can I use the Asset Paywall for any type of content?</a></h3>
+<p><strong>A:</strong> No. You <strong>cannot</strong> use Contract Foundry’s Asset Paywall to monetize or distribute NSFW or illegal content. While the platform is decentralized and does not host content, <strong>users are fully responsible</strong> for using the system ethically and legally.</p>
+<hr />
+<h3 id="-q9-can-contract-foundry-help-if-something-goes-wrong"><a class="header" href="#-q9-can-contract-foundry-help-if-something-goes-wrong">📬 Q9: Can Contract Foundry help if something goes wrong?</a></h3>
+<p><strong>A:</strong> No. Contract Foundry is decentralized. We do not have access to your account, data, or transactions. We also do not offer cloud backed key recovery, transaction reversal, or centralized dispute resolution. All actions are final and executed directly by the user.</p>
+<hr />
+<h3 id="-q10-what-laws-does-contract-foundry-follow"><a class="header" href="#-q10-what-laws-does-contract-foundry-follow">🧑‍⚖️ Q10: What laws does Contract Foundry follow?</a></h3>
+<p><strong>A:</strong> Contract Foundry itself does not operate under any specific legal jurisdiction. Users must comply with the laws applicable in their own region. While the platform supports standards like eIDAS, ESIGN, and GDPR by design, it is the user’s responsibility to ensure lawful use.</p>
+<hr />
+<h3 id="-q11-is-my-data-safe"><a class="header" href="#-q11-is-my-data-safe">🧠 Q11: Is my data safe?</a></h3>
+<p><strong>A:</strong> Yes—if you manage it responsibly. All sensitive data is stored <strong>locally</strong> on your device in <strong>encrypted form</strong>. The app does not transmit your private keys or credentials to any central server.</p>
+<hr />
+<h3 id="-q12-can-i-suggest-a-new-feature-or-report-a-bug"><a class="header" href="#-q12-can-i-suggest-a-new-feature-or-report-a-bug">💡 Q12: Can I suggest a new feature or report a bug?</a></h3>
+<p><strong>A:</strong> Yes! You can reach out via the support contact provided in the app or on the official website. Community feedback is welcome and actively helps shape future updates.</p>
+<hr />
+<p>Need more help? Refer to the platform’s built-in help section or consult the full documentation for detailed walkthroughs.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Legal information - contract foundry docs</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">contract foundry docs</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="-compliance--legal"><a class="header" href="#-compliance--legal">📘 Compliance &amp; Legal</a></h1>
+<p>Contract Foundry is a decentralized platform designed to put users in full control of their digital identities, credentials, contracts, and assets. As such, the platform itself operates without centralized oversight, data collection, or enforcement authority. While it adheres to global technical standards for privacy and legality, <strong>users are solely responsible for ensuring their use of the platform complies with their local laws and regulations</strong>.</p>
+<hr />
+<h2 id="-1-jurisdiction--legal-independence"><a class="header" href="#-1-jurisdiction--legal-independence">⚖️ 1. Jurisdiction &amp; Legal Independence</a></h2>
+<p>Contract Foundry is a globally accessible decentralized system. It does not operate under the regulatory framework of any single country, state, or legal jurisdiction.</p>
+<h3 id="user-responsibilities"><a class="header" href="#user-responsibilities">User Responsibilities:</a></h3>
+<ul>
+<li><strong>Users must comply with the laws applicable in their own region</strong>, including but not limited to those concerning digital contracts, identity management, and data protection.</li>
+<li><strong>Contract Foundry does not provide legal advice</strong> and is not liable for unlawful use of the platform.</li>
+<li>It is the sole responsibility of each user to consult legal counsel if they are unsure of local compliance requirements.</li>
+</ul>
+<hr />
+<h2 id="-2-age-restriction"><a class="header" href="#-2-age-restriction">🔞 2. Age Restriction</a></h2>
+<p>To ensure responsible and legally valid usage, users of Contract Foundry must be <strong>at least 22 years old</strong>.</p>
+<h3 id="rationale"><a class="header" href="#rationale">Rationale:</a></h3>
+<ul>
+<li>The platform deals with legal and financial interactions that may have real-world consequences.</li>
+<li>Users must possess the legal maturity to manage contracts, credentials, and digital assets independently.</li>
+</ul>
+<hr />
+<h2 id="-3-user-data--key-management"><a class="header" href="#-3-user-data--key-management">🔐 3. User Data &amp; Key Management</a></h2>
+<p>Contract Foundry follows a <strong>strict self-custody model</strong> for identity, keys, and data. It does not store, manage, or back up any user data or keys.</p>
+<h3 id="important-disclaimers"><a class="header" href="#important-disclaimers">Important Disclaimers:</a></h3>
+<ul>
+<li><strong>Users are entirely responsible for backing up their private keys and credentials.</strong></li>
+<li>If a user deletes or clears their data (via device reset, uninstallation, or manual deletion), that data is <strong>irretrievably lost</strong>.</li>
+<li>The platform has <strong>no cloud backed recovery mechanisms</strong>, aligning with its privacy-first, non-custodial design.</li>
+</ul>
+<hr />
+<h2 id="-4-nsfw-and-illegal-content-prohibition"><a class="header" href="#-4-nsfw-and-illegal-content-prohibition">📄 4. NSFW and Illegal Content Prohibition</a></h2>
+<p>The <strong>Asset Paywall</strong> feature of Contract Foundry may not be used to monetize or distribute:</p>
+<ul>
+<li>Sexually explicit material (NSFW)</li>
+<li>Child exploitation content</li>
+<li>Hate speech or incitement to violence</li>
+<li>Any material that is illegal under applicable local or international law</li>
+</ul>
+<h3 id="platform-position"><a class="header" href="#platform-position">Platform Position:</a></h3>
+<ul>
+<li>Contract Foundry does <strong>not host or monitor content</strong>, and cannot enforce restrictions in a decentralized environment.</li>
+<li><strong>Responsibility lies fully with the content creator</strong> to ensure they do not use the platform for prohibited or unlawful purposes.</li>
+</ul>
+<hr />
+<h2 id="-5-legal-frameworks-supported"><a class="header" href="#-5-legal-frameworks-supported">📜 5. Legal Frameworks Supported</a></h2>
+<p>While Contract Foundry itself is jurisdiction-agnostic, it adheres to <strong>technical and legal standards</strong> for digital identity and electronic signatures:</p>
+<h3 id="standards-alignment"><a class="header" href="#standards-alignment">Standards Alignment:</a></h3>
+<ul>
+<li><strong>eIDAS</strong>: European standard for qualified and advanced digital signatures.</li>
+<li><strong>ESIGN</strong>: U.S. law governing legally binding electronic records and signatures.</li>
+<li><strong>W3C DID &amp; VC</strong>: Industry-recognized specifications for decentralized identity and verifiable credentials.</li>
+<li><strong>GDPR (by design)</strong>: No personal data collection, and full support for permanent account deletion.</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>Contract Foundry does not guarantee legal validity of transactions in any jurisdiction.</strong> Users are advised to verify the enforceability of digital documents under local law.</p>
+</blockquote>
+<hr />
+<h2 id="-6-liability-disclaimer"><a class="header" href="#-6-liability-disclaimer">🚫 6. Liability Disclaimer</a></h2>
+<p>By using the Contract Foundry platform, users acknowledge and accept the following:</p>
+<ul>
+<li>
+<p>Contract Foundry <strong>is not responsible</strong> for:</p>
+<ul>
+<li>Loss or theft of private keys</li>
+<li>Deletion or loss of user data</li>
+<li>Failure to comply with local legal standards</li>
+<li>Any financial or legal disputes arising from smart contract usage</li>
+</ul>
+</li>
+<li>
+<p>All actions taken using the app are the user’s sole responsibility.</p>
+</li>
+<li>
+<p>Any irreversible blockchain transaction made through the platform is permanent and cannot be undone by Contract Foundry.</p>
+</li>
+</ul>
+<hr />
+<p>Contract Foundry’s role is to provide an decentralized infrastructure, with great control comes great responsibility. Users must operate with integrity, caution, and full awareness of their legal environment.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="security_and_privacy.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="faq.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="security_and_privacy.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="faq.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
