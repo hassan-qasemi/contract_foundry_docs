@@ -10,10 +10,10 @@ This section outlines how billing, service access, and subscriptions are structu
 
 Each subscription plan unlocks different features and usage limits across identity management, smart contracts, verifiable credentials, and document workflows.
 
-### 🔹 Basic
+### 🔹 Pro
 
-* Designed for individuals testing or using minimal services.
-* Access to identity creation, credential viewing, and basic contract templates.
+* Designed for professional individuals or teams.
+* Quick access to all services for setup an startup in a limited time.
 * Limited VC issuance and contract deployments.
 
 ### 🔹 Creator
@@ -61,11 +61,11 @@ Contract Foundry uses an internal **credit-based system** denominated in WEI (th
 
 ## ⛽ 3. Blockchain Gas Fees
 
-Gas fees—used to process transactions on the blockchain—are **paid directly from the user’s ETH wallet**. These are separate from subscription costs.
+Gas fees—used to process transactions on the blockchain—are **paid directly from the user’s EOA**. These are separate from subscription costs.
 
 ### Key Points:
 
-* Users must maintain an ETH balance in their wallet.
+* Users must embalance their EOA and delegates.
 * Every interaction requiring a transaction (e.g., deploy contract, update DID) incurs a gas fee.
 * Contract Foundry does **not** control or markup network fees.
 
@@ -73,7 +73,7 @@ Gas fees—used to process transactions on the blockchain—are **paid directly 
 
 ## 🔁 4. Billing Frequency and Plan Duration
 
-Subscriptions can be activated and extended directly through the Android wallet interface.
+Subscriptions can be activated and extended directly through the wallet interface.
 
 ### Options:
 
@@ -105,7 +105,7 @@ Contract Foundry adheres to a **strict non-recoverability policy** to align with
 
 * Users can view their current plan and usage from the app.
 * Plan upgrades are applied instantly upon payment.
-* Community chat or email support is available depending on tier.
+* Email support and consulation is available for enterprises.
 
 ---
 

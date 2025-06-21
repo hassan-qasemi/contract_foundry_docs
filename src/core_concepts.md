@@ -80,21 +80,7 @@ Digital signatures in Contract Foundry are used to validate documents, credentia
 
 ---
 
-## 5. Storage & Integrity Mechanism
-
-To maintain the integrity of off-chain data (like documents or credentials), Contract Foundry uses reference hashes stored on-chain.
-
-### Supported Storage Types:
-
-* **IPFS (InterPlanetary File System)**: Content-addressable, decentralized file system.
-* **Arweave**: Permanent, blockchain-based storage with transaction ID references.
-* **User-Hosted URIs**: Centralized storage maintained by the user, with integrity protected via immutable references.
-
-This hybrid approach ensures flexibility in storage while guaranteeing authenticity and tamper detection.
-
----
-
-## 6. Self-Sovereignty and Data Ownership
+## 5. Self-Sovereignty and Data Ownership
 
 A central philosophy behind Contract Foundry is **self-sovereignty**, users fully own their data, identities and assets.
 

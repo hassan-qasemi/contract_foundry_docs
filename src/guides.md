@@ -2,13 +2,13 @@
 
 This section provides step-by-step instructions for using Contract Foundry’s features via the official Android wallet application. All operations—from identity creation to smart contract deployment—are executed locally on your device, ensuring secure, self-sovereign interaction with the blockchain.
 
-> ⚠️ **Note**: All actions require a funded Ethereum-compatible wallet and an active subscription plan based on your usage needs.
+> ⚠️ **Note**: All actions require a EOA as delegate and for deployment an active subscription plan or account charge based on usage needs.
 
 ---
 
 ## 🔐 1. Setting Up Your Wallet & Private Key
 
-Before using any service, you must initialize your wallet.
+Before using any service, funded EOA required.
 
 ### Steps:
 
@@ -17,8 +17,8 @@ Before using any service, you must initialize your wallet.
    * **Generate New Key** or
    * **Import Existing Private Key**.
 3. Your key will be securely stored in **encrypted local storage**.
-4. Fund your wallet with ETH to cover network gas fees.
-5. (Optional) Set up biometric or passcode protection for local access.
+4. Embalance EOA to cover network gas fees.
+5. (Optional) Set up passcode protection for local access.
 
 ---
 
@@ -30,7 +30,7 @@ Use this process to register a new blockchain-based identity compliant with ERC-
 
 <img src=images/nav_did.png alt="Alt text" width="200"/>
 
-1. Navigate to **“DID”** > Tap **“Create DID”**.
+1. Navigate to **“DID”**, Tap **“Create DID”** and choose DID type to create *(example is for Ether DID)*.
 
 <img src=images/did_info.png alt="Alt text" width="200"/>
 
@@ -52,7 +52,7 @@ Use this process to register a new blockchain-based identity compliant with ERC-
 
 ## 🧾 3. Deploying a Smart Contract
 
-You can deploy multiple types of contracts using guided forms—no coding required.
+You can deploy multiple types of contracts.
 
 ### Steps:
 
@@ -68,7 +68,7 @@ You can deploy multiple types of contracts using guided forms—no coding requir
 
 ---
 
-## 📜 4. Issuing a Verifiable Credential (VC)
+## 📜 4. Issuing a Verifiable Credential
 
 Create tamper-proof credentials for yourself or others using a visual editor.
 
@@ -120,13 +120,13 @@ Verify the authenticity of a credential or update its status.
 
 1. Tap **“More”** > **“Update Status”**.
 2. Select one of the following: **Valid**, **Suspended**, **Revoked**.
-3. Sign the transaction with your private key.
+3. Sign/verify the credentials with your private key.
 
 > 📝 Only the issuer DID can perform status updates.
 
 ---
 
-## 💰 6. Using the Pledge Contract (Escrow)
+## 💰 6. Using the Pledge Contract
 
 Perfect for freelancers, service providers, and milestone-based payment agreements.
 
@@ -174,14 +174,14 @@ Combine multiple VCs into a single presentation file.
 
 ---
 
-## 📦 8. Exporting and Sharing Documents
+## 📦 8. Exporting and Sharing credentials
 
 All credentials, presentations, and document references can be exported as JSON files.
 
 ### To Export:
 
-1. Open the item from the dashboard.
-2. Tap **“Export”** > Choose location or sharing method.
+1. Open the credentials page.
+2. Tap **“Export”**, file will be created in **"Download"** folder in internal storage.
 
 ### Sharing Options:
 

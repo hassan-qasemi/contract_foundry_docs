@@ -26,7 +26,7 @@ Contract Foundry solves these issues by introducing a **self-sovereign** model w
 * **Decentralized Identities (DIDs)**: Create blockchain-anchored identities under the ERC-1056 and W3C standards.
 * **Verifiable Credentials (VCs)**: Issue and manage tamper-proof credentials with DID-based signatures.
 * **Digital Signatures**: Legally recognized signatures with full auditability and cryptographic proof.
-* **Android Wallet dApp**: A non-custodial mobile application serving as the only interface for secure, encrypted contract interactions.
+* **Non-Custadial Wallet dApp**: A non-custodial mobile application serving as the only interface for secure, encrypted contract interactions.
 
 ---
 

@@ -4,9 +4,9 @@ Contract Foundry provides a comprehensive suite of decentralized services to man
 
 ---
 
-## 1. Android Wallet dApp (Decentralized Wallet Interface)
+## 1. Non-Custadial Wallet dApp
 
-At the heart of Contract Foundry is a **non-custodial Android wallet application**, which acts as the sole interface for all interactions on the platform.
+An **non-custodial wallet decentralized application** as the only platform native interface of Contract Foundry SCaaS, which acts as the sole interface for all interactions on the platform.
 
 ### Features:
 
@@ -25,13 +25,15 @@ At the heart of Contract Foundry is a **non-custodial Android wallet application
 
 ## 2. Verifiable Document Contracts
 
-These smart contracts are designed to secure and authenticate digital files—such as certificates, licenses, or compliance documents.
+Designed for OnChain Document Certification for verifiable documents such as licenses, or compliance documents.
 
 ### Capabilities:
 
-* Bind files and documents to a blockchain contract using a refrence or identifier (IPFS CID, Arweave TXID, or URI).
-* Prevent tampering by making the reference immutable post-deployment.
+* Automated on-chain document verification and authentiaction.
+* Prevent tampering by onchain immutable document existance proof.
 * Allow optional **expiration and revocation** for time-sensitive documents.
+* Multi signature, filterable, automated on-chain signature verification.
+* Immutable audit trails.
 
 ### Use Cases:
 
@@ -43,13 +45,13 @@ These smart contracts are designed to secure and authenticate digital files—su
 
 ## 3. Pledge Contracts (Trustless Payment Escrow)
 
-The **Pledge Contract** module enables milestone-based, conditional fund transfers between two or more parties—without requiring mutual trust or third-party oversight.
+The Pledge Contract trustless escrow and p2p payment, enables milestone-based, fund safety first, fund transfers between two parties—without requiring mutual trust or third-party oversight.
 
 ### Features:
 
 * Funds lock, protect against unplanned or illegal actions.
-* Release is contingent on service completion, confirmed by the customer.
-* Supports rollback of funds if service is canceled or rejected.
+* Safety first collect and collback, leaving or compeleting contract with both side agreement without losing fund.
+* Cancelable and expirable.
 * Native currency bases on using network is used for all payments.
 
 ### Use Cases:
@@ -62,57 +64,50 @@ The **Pledge Contract** module enables milestone-based, conditional fund transfe
 
 ## 4. Asset Paywall Contracts
 
-Monetize digital assets securely through smart contracts that grant access only after payment has been confirmed.
+Monetize digital assets securely, reach global audit, grant access only after payment has been confirmed.
 
 ### Supported Storage:
 
-* IPFS and Arweave (decentralized, permanent)
-* User-hosted file servers (via custom URI)
+* Decentralized storages like IPFS and Arweave
+* Centralized storages like dropbox or even user-hosted file servers
 
-### Functionality:
+### Features:
 
-* User self-host or uploads files, submit their identifier or address as refrence.
-* Contract validates payment before revealing file reference.
+* Automated asset verification and authentication.
+* OnChain paywall.
 
 ### Use Cases:
 
-* Selling reports, research papers, templates
-* Distributing eBooks, licenses, media assets
+* Selling reports, research papers, templates, 3d models and etc.
+* Distributing eBooks and media assets
 
 ---
 
 ## 5. Decentralized Identity Management
 
-Users can create and manage **ERC-1056-compliant decentralized identities** directly through the wallet app.
+Users can create and manage **ERC-1056, W3C DID compliant decentralized identities** directly through the wallet app.
 
-### Identity Features:
+### Features:
 
-* Create a DID with a single transaction.
-* Assign and manage controllers, delegates, and services.
-* Load, edit, and update DID Documents from the app.
-* Use DID for credential issuance and verification.
+* Identifiable, bearry person or entity identity, usable in both person and group.
+* Multi controller, delegates, and services.
 
-### Security:
-
-* All updates and modifications require local transaction signing.
-* History of changes is recorded immutably on the blockchain.
+### Use Cases:
+* Required for compliant signatures.
+* Required DID for legal binding contract and credential issuance and verification.
 
 ---
 
 ## 6. Verifiable Credential Issuance
 
-Issue user-centric credentials with full cryptographic integrity using a guided, form-based workflow.
+Issue and verify wallet-first user-centric W3C verifiable credentials v2.0 with full cryptographic integrity using a guided, form-based workflow.
 
 ### Features:
 
 * Support for standalone and registered credentials.
 * Create schema and metadata through structured input.
-* Credentials can be stored in the wallet or exported.
-
-### Status Management:
-
-* Register credential status (valid, suspended, revoked) directly via the wallet.
-* All changes are reflected across future verifications.
+* Selective disclosure
+* Exportable.
 
 ---
 
@@ -134,24 +129,4 @@ Bundle multiple credentials into a **Verifiable Presentation (VP)**, which can b
 
 ---
 
-## 8. Subscription Tiers
-
-To access different levels of services, Contract Foundry offers multiple subscription plans:
-
-### Plan Levels:
-
-* **Basic**: Starter features for personal use
-* **Creator**: Designed for freelancers and digital creators
-* **Agency**: Includes multi-identity support and collaboration tools
-* **Enterprise**: Custom integrations and strategic consultation
-
-### Features by Tier:
-
-* Smart contract deployment limits
-* Credential issuance quotas
-* Identity registry deployment limits
-* Discounts for long-term use
-
----
-
-Contract Foundry's platform services are built to be modular, privacy-focused, and legally compliant—offering end-to-end decentralized operations for businesses, creators, and developers alike.
+Contract Foundry's platform services are built to be modular, privacy-focused, and legally compliant—offering end-to-end decentralized operations for businesses, creators, and individuals  alike.

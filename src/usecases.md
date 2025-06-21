@@ -6,7 +6,7 @@ Below are key real-world scenarios where Contract Foundry adds measurable value:
 
 ---
 
-## 1. ✅ Freelance & Service-Based Payments (B2C/C2C)
+## 1. ✅ Freelance & Service-Based Payments (B2B/B2C/C2C)
 
 **Problem**: Freelancers often face delayed or denied payments due to lack of trust or enforceable agreements with clients.
 
@@ -16,7 +16,7 @@ Below are key real-world scenarios where Contract Foundry adds measurable value:
 
 * No third-party needed
 * Clear, trustless payment flow
-* Milestone-based fund release
+* Milestone-based payment
 
 ---
 

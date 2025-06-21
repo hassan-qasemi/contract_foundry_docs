@@ -10,9 +10,9 @@ Contract Foundry is designed as a **fully non-custodial platform**. Users mainta
 
 ### Key Elements:
 
-* **Private Keys** are never stored, shared, or transmitted.
+* **Private Keys** are never stored, shared, or transmitted by SCaaS platform.
 * **All signing actions** are executed locally on the user's device.
-* **Wallet encryption** is built into the official Android wallet app.
+* **Wallet encryption** is built into the official wallet app.
 
 This model ensures that the platform itself never has access to sensitive user assets or data.
 
@@ -20,15 +20,7 @@ This model ensures that the platform itself never has access to sensitive user a
 
 ## 🔒 2. Encrypted Local Storage
 
-The official Android wallet app stores all user data—including private keys, credentials, and contract records—in an encrypted format.
-
-### Technical Safeguards:
-
-* Uses secure device storage APIs.
-* Supports biometric or passcode locking for local access.
-* Data remains fully offline unless manually exported.
-
-This guarantees that even if the app is compromised, encrypted user data remains secure and unreadable.
+The official wallet app stores all user data—including private keys, credentials, and contract records—in an encrypted format. Data remains fully offline unless manually exported.
 
 ---
 
@@ -71,7 +63,7 @@ Contract Foundry is engineered to meet international standards for digital ident
 
 ## 🗑️ 6. GDPR-Compliant Data Handling
 
-The platform respects users’ right to **control and erase their data**. Users can permanently delete their accounts, associated DIDs (DID termination wont effects on generated signatures), and all stored credentials via the Android app.
+The platform respects users’ right to **control and erase their data**. Users can permanently delete their accounts, associated key DIDs (DID termination wont effects on generated signatures), and all stored credentials via the Android app.
 
 ### Key Principles:
 
