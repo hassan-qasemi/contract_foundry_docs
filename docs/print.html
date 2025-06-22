@@ -187,7 +187,7 @@
 <li><strong>Decentralized Identities (DIDs)</strong>: Create blockchain-anchored identities under the ERC-1056 and W3C standards.</li>
 <li><strong>Verifiable Credentials (VCs)</strong>: Issue and manage tamper-proof credentials with DID-based signatures.</li>
 <li><strong>Digital Signatures</strong>: Legally recognized signatures with full auditability and cryptographic proof.</li>
-<li><strong>Android Wallet dApp</strong>: A non-custodial mobile application serving as the only interface for secure, encrypted contract interactions.</li>
+<li><strong>Non-Custadial Wallet dApp</strong>: A non-custodial mobile application serving as the only interface for secure, encrypted contract interactions.</li>
 </ul>
 <hr />
 <h2 id="key-principles"><a class="header" href="#key-principles">Key Principles</a></h2>
@@ -273,17 +273,7 @@
 <li>Signed data includes a timestamp and origin proof, creating a verifiable audit trail.</li>
 </ul>
 <hr />
-<h2 id="5-storage--integrity-mechanism"><a class="header" href="#5-storage--integrity-mechanism">5. Storage &amp; Integrity Mechanism</a></h2>
-<p>To maintain the integrity of off-chain data (like documents or credentials), Contract Foundry uses reference hashes stored on-chain.</p>
-<h3 id="supported-storage-types"><a class="header" href="#supported-storage-types">Supported Storage Types:</a></h3>
-<ul>
-<li><strong>IPFS (InterPlanetary File System)</strong>: Content-addressable, decentralized file system.</li>
-<li><strong>Arweave</strong>: Permanent, blockchain-based storage with transaction ID references.</li>
-<li><strong>User-Hosted URIs</strong>: Centralized storage maintained by the user, with integrity protected via immutable references.</li>
-</ul>
-<p>This hybrid approach ensures flexibility in storage while guaranteeing authenticity and tamper detection.</p>
-<hr />
-<h2 id="6-self-sovereignty-and-data-ownership"><a class="header" href="#6-self-sovereignty-and-data-ownership">6. Self-Sovereignty and Data Ownership</a></h2>
+<h2 id="5-self-sovereignty-and-data-ownership"><a class="header" href="#5-self-sovereignty-and-data-ownership">5. Self-Sovereignty and Data Ownership</a></h2>
 <p>A central philosophy behind Contract Foundry is <strong>self-sovereignty</strong>, users fully own their data, identities and assets.</p>
 <ul>
 <li><strong>No Custody of Keys</strong>: The platform never stores user private keys.</li>
@@ -293,8 +283,8 @@
 <div style="break-before: page; page-break-before: always;"></div><h1 id="-platform-services"><a class="header" href="#-platform-services">📘 Platform Services</a></h1>
 <p>Contract Foundry provides a comprehensive suite of decentralized services to manage identities, issue credentials, execute smart contracts, and handle digital signatures—securely and seamlessly through a mobile-first experience. Each service is designed with privacy, scalability, and automation in mind, making the platform both powerful and user-friendly.</p>
 <hr />
-<h2 id="1-android-wallet-dapp-decentralized-wallet-interface"><a class="header" href="#1-android-wallet-dapp-decentralized-wallet-interface">1. Android Wallet dApp (Decentralized Wallet Interface)</a></h2>
-<p>At the heart of Contract Foundry is a <strong>non-custodial Android wallet application</strong>, which acts as the sole interface for all interactions on the platform.</p>
+<h2 id="1-non-custadial-wallet-dapp"><a class="header" href="#1-non-custadial-wallet-dapp">1. Non-Custadial Wallet dApp</a></h2>
+<p>An <strong>non-custodial wallet decentralized application</strong> as the only platform native interface of Contract Foundry SCaaS, which acts as the sole interface for all interactions on the platform.</p>
 <h3 id="features-1"><a class="header" href="#features-1">Features:</a></h3>
 <ul>
 <li>Fully decentralized and user-controlled.</li>
@@ -310,12 +300,14 @@
 </ul>
 <hr />
 <h2 id="2-verifiable-document-contracts"><a class="header" href="#2-verifiable-document-contracts">2. Verifiable Document Contracts</a></h2>
-<p>These smart contracts are designed to secure and authenticate digital files—such as certificates, licenses, or compliance documents.</p>
+<p>Designed for OnChain Document Certification for verifiable documents such as licenses, or compliance documents.</p>
 <h3 id="capabilities-1"><a class="header" href="#capabilities-1">Capabilities:</a></h3>
 <ul>
-<li>Bind files and documents to a blockchain contract using a refrence or identifier (IPFS CID, Arweave TXID, or URI).</li>
-<li>Prevent tampering by making the reference immutable post-deployment.</li>
+<li>Automated on-chain document verification and authentiaction.</li>
+<li>Prevent tampering by onchain immutable document existance proof.</li>
 <li>Allow optional <strong>expiration and revocation</strong> for time-sensitive documents.</li>
+<li>Multi signature, filterable, automated on-chain signature verification.</li>
+<li>Immutable audit trails.</li>
 </ul>
 <h3 id="use-cases-1"><a class="header" href="#use-cases-1">Use Cases:</a></h3>
 <ul>
@@ -325,12 +317,12 @@
 </ul>
 <hr />
 <h2 id="3-pledge-contracts-trustless-payment-escrow"><a class="header" href="#3-pledge-contracts-trustless-payment-escrow">3. Pledge Contracts (Trustless Payment Escrow)</a></h2>
-<p>The <strong>Pledge Contract</strong> module enables milestone-based, conditional fund transfers between two or more parties—without requiring mutual trust or third-party oversight.</p>
+<p>The Pledge Contract trustless escrow and p2p payment, enables milestone-based, fund safety first, fund transfers between two parties—without requiring mutual trust or third-party oversight.</p>
 <h3 id="features-2"><a class="header" href="#features-2">Features:</a></h3>
 <ul>
 <li>Funds lock, protect against unplanned or illegal actions.</li>
-<li>Release is contingent on service completion, confirmed by the customer.</li>
-<li>Supports rollback of funds if service is canceled or rejected.</li>
+<li>Safety first collect and collback, leaving or compeleting contract with both side agreement without losing fund.</li>
+<li>Cancelable and expirable.</li>
 <li>Native currency bases on using network is used for all payments.</li>
 </ul>
 <h3 id="use-cases-2"><a class="header" href="#use-cases-2">Use Cases:</a></h3>
@@ -341,50 +333,44 @@
 </ul>
 <hr />
 <h2 id="4-asset-paywall-contracts"><a class="header" href="#4-asset-paywall-contracts">4. Asset Paywall Contracts</a></h2>
-<p>Monetize digital assets securely through smart contracts that grant access only after payment has been confirmed.</p>
+<p>Monetize digital assets securely, reach global audit, grant access only after payment has been confirmed.</p>
 <h3 id="supported-storage"><a class="header" href="#supported-storage">Supported Storage:</a></h3>
 <ul>
-<li>IPFS and Arweave (decentralized, permanent)</li>
-<li>User-hosted file servers (via custom URI)</li>
+<li>Decentralized storages like IPFS and Arweave</li>
+<li>Centralized storages like dropbox or even user-hosted file servers</li>
 </ul>
-<h3 id="functionality"><a class="header" href="#functionality">Functionality:</a></h3>
+<h3 id="features-3"><a class="header" href="#features-3">Features:</a></h3>
 <ul>
-<li>User self-host or uploads files, submit their identifier or address as refrence.</li>
-<li>Contract validates payment before revealing file reference.</li>
+<li>Automated asset verification and authentication.</li>
+<li>OnChain paywall.</li>
 </ul>
 <h3 id="use-cases-3"><a class="header" href="#use-cases-3">Use Cases:</a></h3>
 <ul>
-<li>Selling reports, research papers, templates</li>
-<li>Distributing eBooks, licenses, media assets</li>
+<li>Selling reports, research papers, templates, 3d models and etc.</li>
+<li>Distributing eBooks and media assets</li>
 </ul>
 <hr />
 <h2 id="5-decentralized-identity-management"><a class="header" href="#5-decentralized-identity-management">5. Decentralized Identity Management</a></h2>
-<p>Users can create and manage <strong>ERC-1056-compliant decentralized identities</strong> directly through the wallet app.</p>
-<h3 id="identity-features"><a class="header" href="#identity-features">Identity Features:</a></h3>
+<p>Users can create and manage <strong>ERC-1056, W3C DID compliant decentralized identities</strong> directly through the wallet app.</p>
+<h3 id="features-4"><a class="header" href="#features-4">Features:</a></h3>
 <ul>
-<li>Create a DID with a single transaction.</li>
-<li>Assign and manage controllers, delegates, and services.</li>
-<li>Load, edit, and update DID Documents from the app.</li>
-<li>Use DID for credential issuance and verification.</li>
+<li>Identifiable, bearry person or entity identity, usable in both person and group.</li>
+<li>Multi controller, delegates, and services.</li>
 </ul>
-<h3 id="security"><a class="header" href="#security">Security:</a></h3>
+<h3 id="use-cases-4"><a class="header" href="#use-cases-4">Use Cases:</a></h3>
 <ul>
-<li>All updates and modifications require local transaction signing.</li>
-<li>History of changes is recorded immutably on the blockchain.</li>
+<li>Required for compliant signatures.</li>
+<li>Required DID for legal binding contract and credential issuance and verification.</li>
 </ul>
 <hr />
 <h2 id="6-verifiable-credential-issuance"><a class="header" href="#6-verifiable-credential-issuance">6. Verifiable Credential Issuance</a></h2>
-<p>Issue user-centric credentials with full cryptographic integrity using a guided, form-based workflow.</p>
-<h3 id="features-3"><a class="header" href="#features-3">Features:</a></h3>
+<p>Issue and verify wallet-first user-centric W3C verifiable credentials v2.0 with full cryptographic integrity using a guided, form-based workflow.</p>
+<h3 id="features-5"><a class="header" href="#features-5">Features:</a></h3>
 <ul>
 <li>Support for standalone and registered credentials.</li>
 <li>Create schema and metadata through structured input.</li>
-<li>Credentials can be stored in the wallet or exported.</li>
-</ul>
-<h3 id="status-management"><a class="header" href="#status-management">Status Management:</a></h3>
-<ul>
-<li>Register credential status (valid, suspended, revoked) directly via the wallet.</li>
-<li>All changes are reflected across future verifications.</li>
+<li>Selective disclosure</li>
+<li>Exportable.</li>
 </ul>
 <hr />
 <h2 id="7-verifiable-presentations"><a class="header" href="#7-verifiable-presentations">7. Verifiable Presentations</a></h2>
@@ -395,39 +381,22 @@
 <li>Free to generate and manage.</li>
 <li>Stored in wallet and exportable as a file.</li>
 </ul>
-<h3 id="use-cases-4"><a class="header" href="#use-cases-4">Use Cases:</a></h3>
+<h3 id="use-cases-5"><a class="header" href="#use-cases-5">Use Cases:</a></h3>
 <ul>
 <li>Job applications requiring multiple qualifications</li>
 <li>Compliance audits</li>
 <li>Digital ID onboarding for services</li>
 </ul>
 <hr />
-<h2 id="8-subscription-tiers"><a class="header" href="#8-subscription-tiers">8. Subscription Tiers</a></h2>
-<p>To access different levels of services, Contract Foundry offers multiple subscription plans:</p>
-<h3 id="plan-levels"><a class="header" href="#plan-levels">Plan Levels:</a></h3>
-<ul>
-<li><strong>Basic</strong>: Starter features for personal use</li>
-<li><strong>Creator</strong>: Designed for freelancers and digital creators</li>
-<li><strong>Agency</strong>: Includes multi-identity support and collaboration tools</li>
-<li><strong>Enterprise</strong>: Custom integrations and strategic consultation</li>
-</ul>
-<h3 id="features-by-tier"><a class="header" href="#features-by-tier">Features by Tier:</a></h3>
-<ul>
-<li>Smart contract deployment limits</li>
-<li>Credential issuance quotas</li>
-<li>Identity registry deployment limits</li>
-<li>Discounts for long-term use</li>
-</ul>
-<hr />
-<p>Contract Foundry's platform services are built to be modular, privacy-focused, and legally compliant—offering end-to-end decentralized operations for businesses, creators, and developers alike.</p>
+<p>Contract Foundry's platform services are built to be modular, privacy-focused, and legally compliant—offering end-to-end decentralized operations for businesses, creators, and individuals  alike.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="-how-to-guides"><a class="header" href="#-how-to-guides">📘 How-To Guides</a></h1>
 <p>This section provides step-by-step instructions for using Contract Foundry’s features via the official Android wallet application. All operations—from identity creation to smart contract deployment—are executed locally on your device, ensuring secure, self-sovereign interaction with the blockchain.</p>
 <blockquote>
-<p>⚠️ <strong>Note</strong>: All actions require a funded Ethereum-compatible wallet and an active subscription plan based on your usage needs.</p>
+<p>⚠️ <strong>Note</strong>: All actions require a EOA as delegate and for deployment an active subscription plan or account charge based on usage needs.</p>
 </blockquote>
 <hr />
 <h2 id="-1-setting-up-your-wallet--private-key"><a class="header" href="#-1-setting-up-your-wallet--private-key">🔐 1. Setting Up Your Wallet &amp; Private Key</a></h2>
-<p>Before using any service, you must initialize your wallet.</p>
+<p>Before using any service, funded EOA required.</p>
 <h3 id="steps"><a class="header" href="#steps">Steps:</a></h3>
 <ol>
 <li><strong>Open the Contract Foundry wallet app</strong>.</li>
@@ -438,8 +407,8 @@
 </ul>
 </li>
 <li>Your key will be securely stored in <strong>encrypted local storage</strong>.</li>
-<li>Fund your wallet with ETH to cover network gas fees.</li>
-<li>(Optional) Set up biometric or passcode protection for local access.</li>
+<li>Embalance EOA to cover network gas fees.</li>
+<li>(Optional) Set up passcode protection for local access.</li>
 </ol>
 <hr />
 <h2 id="-2-creating-and-managing-a-decentralized-identity-did"><a class="header" href="#-2-creating-and-managing-a-decentralized-identity-did">🆔 2. Creating and Managing a Decentralized Identity (DID)</a></h2>
@@ -447,7 +416,7 @@
 <h3 id="steps-1"><a class="header" href="#steps-1">Steps:</a></h3>
 <img src=images/nav_did.png alt="Alt text" width="200"/>
 <ol>
-<li>Navigate to <strong>“DID”</strong> &gt; Tap <strong>“Create DID”</strong>.</li>
+<li>Navigate to <strong>“DID”</strong>, Tap <strong>“Create DID”</strong> and choose DID type to create <em>(example is for Ether DID)</em>.</li>
 </ol>
 <img src=images/did_info.png alt="Alt text" width="200"/>
 <ol start="2">
@@ -467,7 +436,7 @@
 </ol>
 <hr />
 <h2 id="-3-deploying-a-smart-contract"><a class="header" href="#-3-deploying-a-smart-contract">🧾 3. Deploying a Smart Contract</a></h2>
-<p>You can deploy multiple types of contracts using guided forms—no coding required.</p>
+<p>You can deploy multiple types of contracts.</p>
 <h3 id="steps-2"><a class="header" href="#steps-2">Steps:</a></h3>
 <ol>
 <li>
@@ -492,7 +461,7 @@
 </li>
 </ol>
 <hr />
-<h2 id="-4-issuing-a-verifiable-credential-vc"><a class="header" href="#-4-issuing-a-verifiable-credential-vc">📜 4. Issuing a Verifiable Credential (VC)</a></h2>
+<h2 id="-4-issuing-a-verifiable-credential"><a class="header" href="#-4-issuing-a-verifiable-credential">📜 4. Issuing a Verifiable Credential</a></h2>
 <p>Create tamper-proof credentials for yourself or others using a visual editor.</p>
 <h3 id="steps-3"><a class="header" href="#steps-3">Steps:</a></h3>
 <img src=images/vc_page.png alt="Alt text" width="200"/>
@@ -538,13 +507,13 @@
 <ol>
 <li>Tap <strong>“More”</strong> &gt; <strong>“Update Status”</strong>.</li>
 <li>Select one of the following: <strong>Valid</strong>, <strong>Suspended</strong>, <strong>Revoked</strong>.</li>
-<li>Sign the transaction with your private key.</li>
+<li>Sign/verify the credentials with your private key.</li>
 </ol>
 <blockquote>
 <p>📝 Only the issuer DID can perform status updates.</p>
 </blockquote>
 <hr />
-<h2 id="-6-using-the-pledge-contract-escrow"><a class="header" href="#-6-using-the-pledge-contract-escrow">💰 6. Using the Pledge Contract (Escrow)</a></h2>
+<h2 id="-6-using-the-pledge-contract"><a class="header" href="#-6-using-the-pledge-contract">💰 6. Using the Pledge Contract</a></h2>
 <p>Perfect for freelancers, service providers, and milestone-based payment agreements.</p>
 <h3 id="for-service-providers"><a class="header" href="#for-service-providers">For Service Providers:</a></h3>
 <ol>
@@ -587,12 +556,12 @@
 <li>The presentation is stored in your wallet and can be exported manually.</li>
 </ol>
 <hr />
-<h2 id="-8-exporting-and-sharing-documents"><a class="header" href="#-8-exporting-and-sharing-documents">📦 8. Exporting and Sharing Documents</a></h2>
+<h2 id="-8-exporting-and-sharing-credentials"><a class="header" href="#-8-exporting-and-sharing-credentials">📦 8. Exporting and Sharing credentials</a></h2>
 <p>All credentials, presentations, and document references can be exported as JSON files.</p>
 <h3 id="to-export"><a class="header" href="#to-export">To Export:</a></h3>
 <ol>
-<li>Open the item from the dashboard.</li>
-<li>Tap <strong>“Export”</strong> &gt; Choose location or sharing method.</li>
+<li>Open the credentials page.</li>
+<li>Tap <strong>“Export”</strong>, file will be created in <strong>"Download"</strong> folder in internal storage.</li>
 </ol>
 <h3 id="sharing-options"><a class="header" href="#sharing-options">Sharing Options:</a></h3>
 <ul>
@@ -605,14 +574,14 @@
 <p>Contract Foundry empowers a wide range of industries and user types by providing decentralized tools for digital identity, credentialing, contract automation, and secure payments. Its infrastructure supports both individual and enterprise needs, enabling secure, legally compliant, and trustless interactions in the digital ecosystem.</p>
 <p>Below are key real-world scenarios where Contract Foundry adds measurable value:</p>
 <hr />
-<h2 id="1--freelance--service-based-payments-b2cc2c"><a class="header" href="#1--freelance--service-based-payments-b2cc2c">1. ✅ Freelance &amp; Service-Based Payments (B2C/C2C)</a></h2>
+<h2 id="1--freelance--service-based-payments-b2bb2cc2c"><a class="header" href="#1--freelance--service-based-payments-b2bb2cc2c">1. ✅ Freelance &amp; Service-Based Payments (B2B/B2C/C2C)</a></h2>
 <p><strong>Problem</strong>: Freelancers often face delayed or denied payments due to lack of trust or enforceable agreements with clients.</p>
 <p><strong>Solution</strong>: Use the <strong>Pledge Contract</strong> to establish milestone-based or escrow-style agreements. Funds are locked when the contract is initialized and released only when the customer confirms service completion.</p>
 <p><strong>Benefits</strong>:</p>
 <ul>
 <li>No third-party needed</li>
 <li>Clear, trustless payment flow</li>
-<li>Milestone-based fund release</li>
+<li>Milestone-based payment</li>
 </ul>
 <hr />
 <h2 id="2--academic-credential-issuance-education-sector"><a class="header" href="#2--academic-credential-issuance-education-sector">2. 🎓 Academic Credential Issuance (Education Sector)</a></h2>
@@ -692,10 +661,10 @@
 <hr />
 <h2 id="-1-subscription-tiers"><a class="header" href="#-1-subscription-tiers">💳 1. Subscription Tiers</a></h2>
 <p>Each subscription plan unlocks different features and usage limits across identity management, smart contracts, verifiable credentials, and document workflows.</p>
-<h3 id="-basic"><a class="header" href="#-basic">🔹 Basic</a></h3>
+<h3 id="-pro"><a class="header" href="#-pro">🔹 Pro</a></h3>
 <ul>
-<li>Designed for individuals testing or using minimal services.</li>
-<li>Access to identity creation, credential viewing, and basic contract templates.</li>
+<li>Designed for professional individuals or teams.</li>
+<li>Quick access to all services for setup an startup in a limited time.</li>
 <li>Limited VC issuance and contract deployments.</li>
 </ul>
 <h3 id="-creator"><a class="header" href="#-creator">🔹 Creator</a></h3>
@@ -755,16 +724,16 @@
 </blockquote>
 <hr />
 <h2 id="-3-blockchain-gas-fees"><a class="header" href="#-3-blockchain-gas-fees">⛽ 3. Blockchain Gas Fees</a></h2>
-<p>Gas fees—used to process transactions on the blockchain—are <strong>paid directly from the user’s ETH wallet</strong>. These are separate from subscription costs.</p>
+<p>Gas fees—used to process transactions on the blockchain—are <strong>paid directly from the user’s EOA</strong>. These are separate from subscription costs.</p>
 <h3 id="key-points"><a class="header" href="#key-points">Key Points:</a></h3>
 <ul>
-<li>Users must maintain an ETH balance in their wallet.</li>
+<li>Users must embalance their EOA and delegates.</li>
 <li>Every interaction requiring a transaction (e.g., deploy contract, update DID) incurs a gas fee.</li>
 <li>Contract Foundry does <strong>not</strong> control or markup network fees.</li>
 </ul>
 <hr />
 <h2 id="-4-billing-frequency-and-plan-duration"><a class="header" href="#-4-billing-frequency-and-plan-duration">🔁 4. Billing Frequency and Plan Duration</a></h2>
-<p>Subscriptions can be activated and extended directly through the Android wallet interface.</p>
+<p>Subscriptions can be activated and extended directly through the wallet interface.</p>
 <h3 id="options"><a class="header" href="#options">Options:</a></h3>
 <ul>
 <li><strong>Monthly</strong> and <strong>Annual</strong> plans</li>
@@ -791,7 +760,7 @@
 <ul>
 <li>Users can view their current plan and usage from the app.</li>
 <li>Plan upgrades are applied instantly upon payment.</li>
-<li>Community chat or email support is available depending on tier.</li>
+<li>Email support and consulation is available for enterprises.</li>
 </ul>
 <hr />
 <p>Contract Foundry’s pricing is designed to be fair, modular, and scalable—from individuals issuing personal credentials to enterprises automating document workflows and trustless payments. Our goal is to provide cutting-edge decentralized services with predictable and transparent cost structures.</p>
@@ -802,21 +771,14 @@
 <p>Contract Foundry is designed as a <strong>fully non-custodial platform</strong>. Users maintain complete control over their private keys, identities, credentials, and funds at all times.</p>
 <h3 id="key-elements"><a class="header" href="#key-elements">Key Elements:</a></h3>
 <ul>
-<li><strong>Private Keys</strong> are never stored, shared, or transmitted.</li>
+<li><strong>Private Keys</strong> are never stored, shared, or transmitted by SCaaS platform.</li>
 <li><strong>All signing actions</strong> are executed locally on the user's device.</li>
-<li><strong>Wallet encryption</strong> is built into the official Android wallet app.</li>
+<li><strong>Wallet encryption</strong> is built into the official wallet app.</li>
 </ul>
 <p>This model ensures that the platform itself never has access to sensitive user assets or data.</p>
 <hr />
 <h2 id="-2-encrypted-local-storage"><a class="header" href="#-2-encrypted-local-storage">🔒 2. Encrypted Local Storage</a></h2>
-<p>The official Android wallet app stores all user data—including private keys, credentials, and contract records—in an encrypted format.</p>
-<h3 id="technical-safeguards"><a class="header" href="#technical-safeguards">Technical Safeguards:</a></h3>
-<ul>
-<li>Uses secure device storage APIs.</li>
-<li>Supports biometric or passcode locking for local access.</li>
-<li>Data remains fully offline unless manually exported.</li>
-</ul>
-<p>This guarantees that even if the app is compromised, encrypted user data remains secure and unreadable.</p>
+<p>The official wallet app stores all user data—including private keys, credentials, and contract records—in an encrypted format. Data remains fully offline unless manually exported.</p>
 <hr />
 <h2 id="-3-secure-on-chain-transactions"><a class="header" href="#-3-secure-on-chain-transactions">📡 3. Secure On-Chain Transactions</a></h2>
 <p>All blockchain interactions (e.g., contract deployments, status updates, identity changes) are signed locally and sent to the blockchain only after the user explicitly authorizes the transaction.</p>
@@ -847,7 +809,7 @@
 </ul>
 <hr />
 <h2 id="-6-gdpr-compliant-data-handling"><a class="header" href="#-6-gdpr-compliant-data-handling">🗑️ 6. GDPR-Compliant Data Handling</a></h2>
-<p>The platform respects users’ right to <strong>control and erase their data</strong>. Users can permanently delete their accounts, associated DIDs (DID termination wont effects on generated signatures), and all stored credentials via the Android app.</p>
+<p>The platform respects users’ right to <strong>control and erase their data</strong>. Users can permanently delete their accounts, associated key DIDs (DID termination wont effects on generated signatures), and all stored credentials via the Android app.</p>
 <h3 id="key-principles-1"><a class="header" href="#key-principles-1">Key Principles:</a></h3>
 <ul>
 <li><strong>Right to Be Forgotten</strong>: Users can self-initiate irreversible data deletion.</li>

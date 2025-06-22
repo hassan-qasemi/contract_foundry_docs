@@ -169,8 +169,8 @@
                         <h1 id="-platform-services"><a class="header" href="#-platform-services">📘 Platform Services</a></h1>
 <p>Contract Foundry provides a comprehensive suite of decentralized services to manage identities, issue credentials, execute smart contracts, and handle digital signatures—securely and seamlessly through a mobile-first experience. Each service is designed with privacy, scalability, and automation in mind, making the platform both powerful and user-friendly.</p>
 <hr />
-<h2 id="1-android-wallet-dapp-decentralized-wallet-interface"><a class="header" href="#1-android-wallet-dapp-decentralized-wallet-interface">1. Android Wallet dApp (Decentralized Wallet Interface)</a></h2>
-<p>At the heart of Contract Foundry is a <strong>non-custodial Android wallet application</strong>, which acts as the sole interface for all interactions on the platform.</p>
+<h2 id="1-non-custadial-wallet-dapp"><a class="header" href="#1-non-custadial-wallet-dapp">1. Non-Custadial Wallet dApp</a></h2>
+<p>An <strong>non-custodial wallet decentralized application</strong> as the only platform native interface of Contract Foundry SCaaS, which acts as the sole interface for all interactions on the platform.</p>
 <h3 id="features"><a class="header" href="#features">Features:</a></h3>
 <ul>
 <li>Fully decentralized and user-controlled.</li>
@@ -186,12 +186,14 @@
 </ul>
 <hr />
 <h2 id="2-verifiable-document-contracts"><a class="header" href="#2-verifiable-document-contracts">2. Verifiable Document Contracts</a></h2>
-<p>These smart contracts are designed to secure and authenticate digital files—such as certificates, licenses, or compliance documents.</p>
+<p>Designed for OnChain Document Certification for verifiable documents such as licenses, or compliance documents.</p>
 <h3 id="capabilities"><a class="header" href="#capabilities">Capabilities:</a></h3>
 <ul>
-<li>Bind files and documents to a blockchain contract using a refrence or identifier (IPFS CID, Arweave TXID, or URI).</li>
-<li>Prevent tampering by making the reference immutable post-deployment.</li>
+<li>Automated on-chain document verification and authentiaction.</li>
+<li>Prevent tampering by onchain immutable document existance proof.</li>
 <li>Allow optional <strong>expiration and revocation</strong> for time-sensitive documents.</li>
+<li>Multi signature, filterable, automated on-chain signature verification.</li>
+<li>Immutable audit trails.</li>
 </ul>
 <h3 id="use-cases"><a class="header" href="#use-cases">Use Cases:</a></h3>
 <ul>
@@ -201,12 +203,12 @@
 </ul>
 <hr />
 <h2 id="3-pledge-contracts-trustless-payment-escrow"><a class="header" href="#3-pledge-contracts-trustless-payment-escrow">3. Pledge Contracts (Trustless Payment Escrow)</a></h2>
-<p>The <strong>Pledge Contract</strong> module enables milestone-based, conditional fund transfers between two or more parties—without requiring mutual trust or third-party oversight.</p>
+<p>The Pledge Contract trustless escrow and p2p payment, enables milestone-based, fund safety first, fund transfers between two parties—without requiring mutual trust or third-party oversight.</p>
 <h3 id="features-1"><a class="header" href="#features-1">Features:</a></h3>
 <ul>
 <li>Funds lock, protect against unplanned or illegal actions.</li>
-<li>Release is contingent on service completion, confirmed by the customer.</li>
-<li>Supports rollback of funds if service is canceled or rejected.</li>
+<li>Safety first collect and collback, leaving or compeleting contract with both side agreement without losing fund.</li>
+<li>Cancelable and expirable.</li>
 <li>Native currency bases on using network is used for all payments.</li>
 </ul>
 <h3 id="use-cases-1"><a class="header" href="#use-cases-1">Use Cases:</a></h3>
@@ -217,50 +219,44 @@
 </ul>
 <hr />
 <h2 id="4-asset-paywall-contracts"><a class="header" href="#4-asset-paywall-contracts">4. Asset Paywall Contracts</a></h2>
-<p>Monetize digital assets securely through smart contracts that grant access only after payment has been confirmed.</p>
+<p>Monetize digital assets securely, reach global audit, grant access only after payment has been confirmed.</p>
 <h3 id="supported-storage"><a class="header" href="#supported-storage">Supported Storage:</a></h3>
 <ul>
-<li>IPFS and Arweave (decentralized, permanent)</li>
-<li>User-hosted file servers (via custom URI)</li>
+<li>Decentralized storages like IPFS and Arweave</li>
+<li>Centralized storages like dropbox or even user-hosted file servers</li>
 </ul>
-<h3 id="functionality"><a class="header" href="#functionality">Functionality:</a></h3>
+<h3 id="features-2"><a class="header" href="#features-2">Features:</a></h3>
 <ul>
-<li>User self-host or uploads files, submit their identifier or address as refrence.</li>
-<li>Contract validates payment before revealing file reference.</li>
+<li>Automated asset verification and authentication.</li>
+<li>OnChain paywall.</li>
 </ul>
 <h3 id="use-cases-2"><a class="header" href="#use-cases-2">Use Cases:</a></h3>
 <ul>
-<li>Selling reports, research papers, templates</li>
-<li>Distributing eBooks, licenses, media assets</li>
+<li>Selling reports, research papers, templates, 3d models and etc.</li>
+<li>Distributing eBooks and media assets</li>
 </ul>
 <hr />
 <h2 id="5-decentralized-identity-management"><a class="header" href="#5-decentralized-identity-management">5. Decentralized Identity Management</a></h2>
-<p>Users can create and manage <strong>ERC-1056-compliant decentralized identities</strong> directly through the wallet app.</p>
-<h3 id="identity-features"><a class="header" href="#identity-features">Identity Features:</a></h3>
+<p>Users can create and manage <strong>ERC-1056, W3C DID compliant decentralized identities</strong> directly through the wallet app.</p>
+<h3 id="features-3"><a class="header" href="#features-3">Features:</a></h3>
 <ul>
-<li>Create a DID with a single transaction.</li>
-<li>Assign and manage controllers, delegates, and services.</li>
-<li>Load, edit, and update DID Documents from the app.</li>
-<li>Use DID for credential issuance and verification.</li>
+<li>Identifiable, bearry person or entity identity, usable in both person and group.</li>
+<li>Multi controller, delegates, and services.</li>
 </ul>
-<h3 id="security"><a class="header" href="#security">Security:</a></h3>
+<h3 id="use-cases-3"><a class="header" href="#use-cases-3">Use Cases:</a></h3>
 <ul>
-<li>All updates and modifications require local transaction signing.</li>
-<li>History of changes is recorded immutably on the blockchain.</li>
+<li>Required for compliant signatures.</li>
+<li>Required DID for legal binding contract and credential issuance and verification.</li>
 </ul>
 <hr />
 <h2 id="6-verifiable-credential-issuance"><a class="header" href="#6-verifiable-credential-issuance">6. Verifiable Credential Issuance</a></h2>
-<p>Issue user-centric credentials with full cryptographic integrity using a guided, form-based workflow.</p>
-<h3 id="features-2"><a class="header" href="#features-2">Features:</a></h3>
+<p>Issue and verify wallet-first user-centric W3C verifiable credentials v2.0 with full cryptographic integrity using a guided, form-based workflow.</p>
+<h3 id="features-4"><a class="header" href="#features-4">Features:</a></h3>
 <ul>
 <li>Support for standalone and registered credentials.</li>
 <li>Create schema and metadata through structured input.</li>
-<li>Credentials can be stored in the wallet or exported.</li>
-</ul>
-<h3 id="status-management"><a class="header" href="#status-management">Status Management:</a></h3>
-<ul>
-<li>Register credential status (valid, suspended, revoked) directly via the wallet.</li>
-<li>All changes are reflected across future verifications.</li>
+<li>Selective disclosure</li>
+<li>Exportable.</li>
 </ul>
 <hr />
 <h2 id="7-verifiable-presentations"><a class="header" href="#7-verifiable-presentations">7. Verifiable Presentations</a></h2>
@@ -271,31 +267,14 @@
 <li>Free to generate and manage.</li>
 <li>Stored in wallet and exportable as a file.</li>
 </ul>
-<h3 id="use-cases-3"><a class="header" href="#use-cases-3">Use Cases:</a></h3>
+<h3 id="use-cases-4"><a class="header" href="#use-cases-4">Use Cases:</a></h3>
 <ul>
 <li>Job applications requiring multiple qualifications</li>
 <li>Compliance audits</li>
 <li>Digital ID onboarding for services</li>
 </ul>
 <hr />
-<h2 id="8-subscription-tiers"><a class="header" href="#8-subscription-tiers">8. Subscription Tiers</a></h2>
-<p>To access different levels of services, Contract Foundry offers multiple subscription plans:</p>
-<h3 id="plan-levels"><a class="header" href="#plan-levels">Plan Levels:</a></h3>
-<ul>
-<li><strong>Basic</strong>: Starter features for personal use</li>
-<li><strong>Creator</strong>: Designed for freelancers and digital creators</li>
-<li><strong>Agency</strong>: Includes multi-identity support and collaboration tools</li>
-<li><strong>Enterprise</strong>: Custom integrations and strategic consultation</li>
-</ul>
-<h3 id="features-by-tier"><a class="header" href="#features-by-tier">Features by Tier:</a></h3>
-<ul>
-<li>Smart contract deployment limits</li>
-<li>Credential issuance quotas</li>
-<li>Identity registry deployment limits</li>
-<li>Discounts for long-term use</li>
-</ul>
-<hr />
-<p>Contract Foundry's platform services are built to be modular, privacy-focused, and legally compliant—offering end-to-end decentralized operations for businesses, creators, and developers alike.</p>
+<p>Contract Foundry's platform services are built to be modular, privacy-focused, and legally compliant—offering end-to-end decentralized operations for businesses, creators, and individuals  alike.</p>
 
                     </main>
 

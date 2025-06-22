@@ -173,21 +173,14 @@
 <p>Contract Foundry is designed as a <strong>fully non-custodial platform</strong>. Users maintain complete control over their private keys, identities, credentials, and funds at all times.</p>
 <h3 id="key-elements"><a class="header" href="#key-elements">Key Elements:</a></h3>
 <ul>
-<li><strong>Private Keys</strong> are never stored, shared, or transmitted.</li>
+<li><strong>Private Keys</strong> are never stored, shared, or transmitted by SCaaS platform.</li>
 <li><strong>All signing actions</strong> are executed locally on the user's device.</li>
-<li><strong>Wallet encryption</strong> is built into the official Android wallet app.</li>
+<li><strong>Wallet encryption</strong> is built into the official wallet app.</li>
 </ul>
 <p>This model ensures that the platform itself never has access to sensitive user assets or data.</p>
 <hr />
 <h2 id="-2-encrypted-local-storage"><a class="header" href="#-2-encrypted-local-storage">🔒 2. Encrypted Local Storage</a></h2>
-<p>The official Android wallet app stores all user data—including private keys, credentials, and contract records—in an encrypted format.</p>
-<h3 id="technical-safeguards"><a class="header" href="#technical-safeguards">Technical Safeguards:</a></h3>
-<ul>
-<li>Uses secure device storage APIs.</li>
-<li>Supports biometric or passcode locking for local access.</li>
-<li>Data remains fully offline unless manually exported.</li>
-</ul>
-<p>This guarantees that even if the app is compromised, encrypted user data remains secure and unreadable.</p>
+<p>The official wallet app stores all user data—including private keys, credentials, and contract records—in an encrypted format. Data remains fully offline unless manually exported.</p>
 <hr />
 <h2 id="-3-secure-on-chain-transactions"><a class="header" href="#-3-secure-on-chain-transactions">📡 3. Secure On-Chain Transactions</a></h2>
 <p>All blockchain interactions (e.g., contract deployments, status updates, identity changes) are signed locally and sent to the blockchain only after the user explicitly authorizes the transaction.</p>
@@ -218,7 +211,7 @@
 </ul>
 <hr />
 <h2 id="-6-gdpr-compliant-data-handling"><a class="header" href="#-6-gdpr-compliant-data-handling">🗑️ 6. GDPR-Compliant Data Handling</a></h2>
-<p>The platform respects users’ right to <strong>control and erase their data</strong>. Users can permanently delete their accounts, associated DIDs (DID termination wont effects on generated signatures), and all stored credentials via the Android app.</p>
+<p>The platform respects users’ right to <strong>control and erase their data</strong>. Users can permanently delete their accounts, associated key DIDs (DID termination wont effects on generated signatures), and all stored credentials via the Android app.</p>
 <h3 id="key-principles"><a class="header" href="#key-principles">Key Principles:</a></h3>
 <ul>
 <li><strong>Right to Be Forgotten</strong>: Users can self-initiate irreversible data deletion.</li>

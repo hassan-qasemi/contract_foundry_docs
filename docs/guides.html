@@ -169,11 +169,11 @@
                         <h1 id="-how-to-guides"><a class="header" href="#-how-to-guides">📘 How-To Guides</a></h1>
 <p>This section provides step-by-step instructions for using Contract Foundry’s features via the official Android wallet application. All operations—from identity creation to smart contract deployment—are executed locally on your device, ensuring secure, self-sovereign interaction with the blockchain.</p>
 <blockquote>
-<p>⚠️ <strong>Note</strong>: All actions require a funded Ethereum-compatible wallet and an active subscription plan based on your usage needs.</p>
+<p>⚠️ <strong>Note</strong>: All actions require a EOA as delegate and for deployment an active subscription plan or account charge based on usage needs.</p>
 </blockquote>
 <hr />
 <h2 id="-1-setting-up-your-wallet--private-key"><a class="header" href="#-1-setting-up-your-wallet--private-key">🔐 1. Setting Up Your Wallet &amp; Private Key</a></h2>
-<p>Before using any service, you must initialize your wallet.</p>
+<p>Before using any service, funded EOA required.</p>
 <h3 id="steps"><a class="header" href="#steps">Steps:</a></h3>
 <ol>
 <li><strong>Open the Contract Foundry wallet app</strong>.</li>
@@ -184,8 +184,8 @@
 </ul>
 </li>
 <li>Your key will be securely stored in <strong>encrypted local storage</strong>.</li>
-<li>Fund your wallet with ETH to cover network gas fees.</li>
-<li>(Optional) Set up biometric or passcode protection for local access.</li>
+<li>Embalance EOA to cover network gas fees.</li>
+<li>(Optional) Set up passcode protection for local access.</li>
 </ol>
 <hr />
 <h2 id="-2-creating-and-managing-a-decentralized-identity-did"><a class="header" href="#-2-creating-and-managing-a-decentralized-identity-did">🆔 2. Creating and Managing a Decentralized Identity (DID)</a></h2>
@@ -193,7 +193,7 @@
 <h3 id="steps-1"><a class="header" href="#steps-1">Steps:</a></h3>
 <img src=images/nav_did.png alt="Alt text" width="200"/>
 <ol>
-<li>Navigate to <strong>“DID”</strong> &gt; Tap <strong>“Create DID”</strong>.</li>
+<li>Navigate to <strong>“DID”</strong>, Tap <strong>“Create DID”</strong> and choose DID type to create <em>(example is for Ether DID)</em>.</li>
 </ol>
 <img src=images/did_info.png alt="Alt text" width="200"/>
 <ol start="2">
@@ -213,7 +213,7 @@
 </ol>
 <hr />
 <h2 id="-3-deploying-a-smart-contract"><a class="header" href="#-3-deploying-a-smart-contract">🧾 3. Deploying a Smart Contract</a></h2>
-<p>You can deploy multiple types of contracts using guided forms—no coding required.</p>
+<p>You can deploy multiple types of contracts.</p>
 <h3 id="steps-2"><a class="header" href="#steps-2">Steps:</a></h3>
 <ol>
 <li>
@@ -238,7 +238,7 @@
 </li>
 </ol>
 <hr />
-<h2 id="-4-issuing-a-verifiable-credential-vc"><a class="header" href="#-4-issuing-a-verifiable-credential-vc">📜 4. Issuing a Verifiable Credential (VC)</a></h2>
+<h2 id="-4-issuing-a-verifiable-credential"><a class="header" href="#-4-issuing-a-verifiable-credential">📜 4. Issuing a Verifiable Credential</a></h2>
 <p>Create tamper-proof credentials for yourself or others using a visual editor.</p>
 <h3 id="steps-3"><a class="header" href="#steps-3">Steps:</a></h3>
 <img src=images/vc_page.png alt="Alt text" width="200"/>
@@ -284,13 +284,13 @@
 <ol>
 <li>Tap <strong>“More”</strong> &gt; <strong>“Update Status”</strong>.</li>
 <li>Select one of the following: <strong>Valid</strong>, <strong>Suspended</strong>, <strong>Revoked</strong>.</li>
-<li>Sign the transaction with your private key.</li>
+<li>Sign/verify the credentials with your private key.</li>
 </ol>
 <blockquote>
 <p>📝 Only the issuer DID can perform status updates.</p>
 </blockquote>
 <hr />
-<h2 id="-6-using-the-pledge-contract-escrow"><a class="header" href="#-6-using-the-pledge-contract-escrow">💰 6. Using the Pledge Contract (Escrow)</a></h2>
+<h2 id="-6-using-the-pledge-contract"><a class="header" href="#-6-using-the-pledge-contract">💰 6. Using the Pledge Contract</a></h2>
 <p>Perfect for freelancers, service providers, and milestone-based payment agreements.</p>
 <h3 id="for-service-providers"><a class="header" href="#for-service-providers">For Service Providers:</a></h3>
 <ol>
@@ -333,12 +333,12 @@
 <li>The presentation is stored in your wallet and can be exported manually.</li>
 </ol>
 <hr />
-<h2 id="-8-exporting-and-sharing-documents"><a class="header" href="#-8-exporting-and-sharing-documents">📦 8. Exporting and Sharing Documents</a></h2>
+<h2 id="-8-exporting-and-sharing-credentials"><a class="header" href="#-8-exporting-and-sharing-credentials">📦 8. Exporting and Sharing credentials</a></h2>
 <p>All credentials, presentations, and document references can be exported as JSON files.</p>
 <h3 id="to-export"><a class="header" href="#to-export">To Export:</a></h3>
 <ol>
-<li>Open the item from the dashboard.</li>
-<li>Tap <strong>“Export”</strong> &gt; Choose location or sharing method.</li>
+<li>Open the credentials page.</li>
+<li>Tap <strong>“Export”</strong>, file will be created in <strong>"Download"</strong> folder in internal storage.</li>
 </ol>
 <h3 id="sharing-options"><a class="header" href="#sharing-options">Sharing Options:</a></h3>
 <ul>
