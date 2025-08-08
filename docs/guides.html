@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Guides - contract foundry docs</title>
+        <title>Guides - Contract Foundry Docs</title>
 
 
         <!-- Custom HTML head -->
@@ -134,7 +134,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">contract foundry docs</h1>
+                    <h1 class="menu-title">Contract Foundry Docs</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -191,56 +191,16 @@
 <h2 id="-2-creating-and-managing-a-decentralized-identity-did"><a class="header" href="#-2-creating-and-managing-a-decentralized-identity-did">🆔 2. Creating and Managing a Decentralized Identity (DID)</a></h2>
 <p>Use this process to register a new blockchain-based identity compliant with ERC-1056 and W3C standards.</p>
 <h3 id="steps-1"><a class="header" href="#steps-1">Steps:</a></h3>
-<img src=images/nav_did.png alt="Alt text" width="200"/>
 <ol>
 <li>Navigate to <strong>“DID”</strong>, Tap <strong>“Create DID”</strong> and choose DID type to create <em>(example is for Ether DID)</em>.</li>
-</ol>
-<img src=images/did_info.png alt="Alt text" width="200"/>
-<ol start="2">
 <li>Fill in the <strong>DID name</strong>, <strong>network</strong>, and public informations.</li>
-<li>Tap <strong>“Continue”</strong> and sign the transaction with your private key.</li>
-</ol>
-<img src=images/init_did.png alt="Alt text" width="200"/>
-<img src=images/did_init_history.png alt="Alt text" width="200"/>
-<ol start="4">
-<li>Once deployed, in history page and issuance tile tap <strong>“Initialize &amp; setup”</strong> to activate it.</li>
-</ol>
-<img src=images/did_page.png alt="Alt text" width="200"/>
-<img src=images/diddoc_load.png alt="Alt text" width="200"/>
-<img src=images/diddoc.png alt="Alt text" width="200"/>
-<ol start="5">
+<li>Tap <strong>“Continue”</strong> and confirm the transaction with your private key as identity.</li>
 <li>Manage controllers, delegates, and services from the DID dashboard.</li>
 </ol>
 <hr />
-<h2 id="-3-deploying-a-smart-contract"><a class="header" href="#-3-deploying-a-smart-contract">🧾 3. Deploying a Smart Contract</a></h2>
-<p>You can deploy multiple types of contracts.</p>
-<h3 id="steps-2"><a class="header" href="#steps-2">Steps:</a></h3>
-<ol>
-<li>
-<p>Go to <strong>“Contracts”</strong> &gt; Select a contract type:</p>
-<ul>
-<li>Verifiable Document</li>
-<li>Pledge</li>
-<li>Asset Paywall</li>
-</ul>
-</li>
-<li>
-<p>Fill out the form with necessary details (title, reference, pricing, etc.).</p>
-</li>
-<li>
-<p>Tap <strong>“Deploy Contract”</strong> and confirm the transaction.</p>
-</li>
-<li>
-<p>Once confirmed, go to <strong>“History”</strong> and tap <strong>“Initialize”</strong> to activate the contract.</p>
-</li>
-<li>
-<p>Share the <strong>Contract DID</strong> with relevant parties to interact.</p>
-</li>
-</ol>
-<hr />
-<h2 id="-4-issuing-a-verifiable-credential"><a class="header" href="#-4-issuing-a-verifiable-credential">📜 4. Issuing a Verifiable Credential</a></h2>
+<h2 id="-3-issuing-a-verifiable-credential"><a class="header" href="#-3-issuing-a-verifiable-credential">📜 3. Issuing a Verifiable Credential</a></h2>
 <p>Create tamper-proof credentials for yourself or others using a visual editor.</p>
-<h3 id="steps-3"><a class="header" href="#steps-3">Steps:</a></h3>
+<h3 id="steps-2"><a class="header" href="#steps-2">Steps:</a></h3>
 <img src=images/vc_page.png alt="Alt text" width="200"/>
 <ol>
 <li>Go to <strong>“Credentials”</strong> &gt; Tap <strong>“New Verifiable Entity”</strong>.</li>
@@ -263,18 +223,18 @@
 <p>✅ The credential will appear in your wallet and can be exported.</p>
 </blockquote>
 <hr />
-<h2 id="-5-verifying-or-updating-a-credential"><a class="header" href="#-5-verifying-or-updating-a-credential">✅ 5. Verifying or Updating a Credential</a></h2>
+<h2 id="-4-verifying-or-updating-a-credential"><a class="header" href="#-4-verifying-or-updating-a-credential">✅ 4. Verifying or Updating a Credential</a></h2>
 <p>Verify the authenticity of a credential or update its status.</p>
 <h3 id="to-verify-a-credential"><a class="header" href="#to-verify-a-credential">To Verify a Credential:</a></h3>
 <img src=images/vc_page2.png alt="Alt text" width="200"/>
 <ol>
-<li>Open the credential from your <strong>VC list</strong>.</li>
+<li>Open the credential from your <strong>Credentials list</strong>.</li>
 </ol>
 <img src=images/vc_page_dialog.png alt="Alt text" width="200"/>
 <img src=images/vc_display.png alt="Alt text" width="200"/>
 <ol start="2">
 <li>Tap <strong>“Verify”</strong> from the top-right menu.</li>
-<li>Input the <strong>signer DID</strong> and your <strong>private key</strong> to confirm.</li>
+<li>Input the <strong>verififer DID</strong> and your <strong>private key</strong> to confirm.</li>
 </ol>
 <img src=images/verified_vc_display.png alt="Alt text" width="200"/>
 <ol start="4">
@@ -290,27 +250,22 @@
 <p>📝 Only the issuer DID can perform status updates.</p>
 </blockquote>
 <hr />
-<h2 id="-6-using-the-pledge-contract"><a class="header" href="#-6-using-the-pledge-contract">💰 6. Using the Pledge Contract</a></h2>
+<h2 id="-5-using-the-pledge-contract"><a class="header" href="#-5-using-the-pledge-contract">💰 5. Using the Pledge Contract</a></h2>
 <p>Perfect for freelancers, service providers, and milestone-based payment agreements.</p>
 <h3 id="for-service-providers"><a class="header" href="#for-service-providers">For Service Providers:</a></h3>
 <ol>
-<li>Go to <strong>“Contracts”</strong> &gt; <strong>“Pledge Contract”</strong>.</li>
-</ol>
-<img src=images/pledge_form.png alt="Alt text" width="200"/>
-<ol start="2">
-<li>Fill in service details, total cost in chosen network currency in (WEI) unit.</li>
-</ol>
-<img src=images/init_pledge.png alt="Alt text" width="200"/>
-<ol start="3">
-<li>Deploy and initialize the contract.</li>
-</ol>
-<img src=images/pledge_info.png alt="Alt text" width="200"/>
-<img src=images/load_pledge.png alt="Alt text" width="200"/>
-<br/>
-<img src=images/pledge_page.png alt="Alt text" width="200"/>
-<img src=images/pledge_options.png alt="Alt text" width="200"/>
-<ol start="4">
-<li>Share the <strong>Contract DID</strong> with the customer.</li>
+<li>
+<p>Go to <strong>“Contracts”</strong> &gt; <strong>“Pledge Contract”</strong>.</p>
+</li>
+<li>
+<p>Fill in service details, total cost in chosen network currency in (WEI) unit.</p>
+</li>
+<li>
+<p>Deploy and initialize the contract.</p>
+</li>
+<li>
+<p>Share the <strong>Contract DID</strong> with the customer.</p>
+</li>
 </ol>
 <h3 id="for-customers"><a class="header" href="#for-customers">For Customers:</a></h3>
 <ol>
@@ -318,13 +273,207 @@
 <li>Submit payments per milestone or full upfront.</li>
 <li>Confirm <strong>“Service Complete”</strong> when work is finished.</li>
 </ol>
+<h3 id="contarct-status-guide"><a class="header" href="#contarct-status-guide">Contarct Status Guide:</a></h3>
+<h4 id="1-pending"><a class="header" href="#1-pending">1. <code>pending</code></a></h4>
+<ul>
+<li>
+<p><strong>Meaning</strong>: Service is initialized but <strong>not started</strong> yet.</p>
+</li>
+<li>
+<p><strong>Entered by</strong>: No one, its default state.</p>
+</li>
+<li>
+<p><strong>Who can act</strong>: Only the <strong>seller</strong> (issuer).</p>
+</li>
+<li>
+<p><strong>Transitions to</strong>:</p>
+<ul>
+<li><code>active</code> → when seller start service</li>
+<li><code>canceled</code> → when seller cancels before starting</li>
+</ul>
+</li>
+<li>
+<p><strong>Permissions</strong>:</p>
+<ul>
+<li>✅ Rollback: ✅ Allowed (buyer)</li>
+<li>✅ Cancel: ✅ Allowed (seller)</li>
+<li>🚫 Withdraw: ❌ Not allowed</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4 id="2-active"><a class="header" href="#2-active">2. <code>active</code></a></h4>
+<ul>
+<li>
+<p><strong>Meaning</strong>: Service has been started and is in progress.</p>
+</li>
+<li>
+<p><strong>Entered by</strong>: Seller start the service</p>
+</li>
+<li>
+<p><strong>Who can act</strong>: Seller (to execute); Buyer (to dispute, after execute).</p>
+</li>
+<li>
+<p><strong>Transitions to</strong>:</p>
+<ul>
+<li><code>executed</code> → when seller exceute service (marks delivery)</li>
+<li><code>disputed</code> → if buyer raises dispute while service is still active (on going)</li>
+</ul>
+</li>
+<li>
+<p><strong>Permissions</strong>:</p>
+<ul>
+<li>🚫 Rollback: ❌ Not allowed (buyer), unless expired</li>
+<li>🚫 Cancel: ❌ Not allowed (seller)</li>
+<li>🚫 Withdraw: ❌ Not allowed</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4 id="3-executed"><a class="header" href="#3-executed">3. <code>executed</code></a></h4>
+<ul>
+<li>
+<p><strong>Meaning</strong>: Seller marked service as delivered.</p>
+</li>
+<li>
+<p><strong>Entered by</strong>: Seller execute the Service</p>
+</li>
+<li>
+<p><strong>Who can act</strong>:</p>
+<ul>
+<li>Buyer can confirm → <code>completed</code></li>
+<li>Buyer can dispute → <code>disputed</code></li>
+<li>Seller can withdraw after 5 days post-expiration (if no dispute submitted)</li>
+</ul>
+</li>
+<li>
+<p><strong>Transitions to</strong>:</p>
+<ul>
+<li><code>completed</code> → when buyer complete service</li>
+<li><code>disputed</code> → when buyer dispute service</li>
+</ul>
+</li>
+<li>
+<p><strong>Permissions</strong>:</p>
+<ul>
+<li>🚫 Rollback: ❌ Not allowed</li>
+<li>✅ Withdraw: ✅ Allowed (only 5 days after expiration)</li>
+<li>🚫 Cancel: ❌ Not allowed</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4 id="4-disputed"><a class="header" href="#4-disputed">4. <code>disputed</code></a></h4>
+<ul>
+<li>
+<p><strong>Meaning</strong>: Buyer raised a dispute over execution/delivery.</p>
+</li>
+<li>
+<p><strong>Entered by</strong>: Buyer dispute the service</p>
+</li>
+<li>
+<p><strong>Who can act</strong>:</p>
+<ul>
+<li>Buyer can complete it</li>
+<li>Seller can cancel it</li>
+</ul>
+</li>
+<li>
+<p><strong>Transitions to</strong>:</p>
+<ul>
+<li><code>Complete</code> → By Customer</li>
+<li><code>Cancel</code> → By Seller</li>
+</ul>
+</li>
+<li>
+<p><strong>Permissions</strong>:</p>
+<ul>
+<li>🚫 Rollback: ❌ Not allowed</li>
+<li>🚫 Withdraw: ❌ Not allowed</li>
+<li>🚫 Cancel: ❌ Not allowed</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4 id="5-completed"><a class="header" href="#5-completed">5. <code>completed</code></a></h4>
+<ul>
+<li>
+<p><strong>Meaning</strong>: Buyer confirmed that service was delivered and accepted.</p>
+</li>
+<li>
+<p><strong>Entered by</strong>: Buyer complete the service</p>
+</li>
+<li>
+<p><strong>Who can act</strong>:</p>
+<ul>
+<li>Seller → can now withdraw</li>
+</ul>
+</li>
+<li>
+<p><strong>Permissions</strong>:</p>
+<ul>
+<li>🚫 Rollback: ❌ Not allowed</li>
+<li>✅ Withdraw: ✅ Allowed (seller)</li>
+<li>🚫 Dispute: ❌ Not allowed</li>
+<li>🚫 Cancel: ❌ Not allowed</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4 id="6-canceled"><a class="header" href="#6-canceled">6. <code>canceled</code></a></h4>
+<ul>
+<li>
+<p><strong>Meaning</strong>: Seller canceled the service before delivery or completion.</p>
+</li>
+<li>
+<p><strong>Entered by</strong>: Seller calls <code>cancelService()</code></p>
+</li>
+<li>
+<p><strong>Who can act</strong>:</p>
+<ul>
+<li>Buyer can rollback to retrieve funds</li>
+</ul>
+</li>
+<li>
+<p><strong>Permissions</strong>:</p>
+<ul>
+<li>✅ Rollback: ✅ Allowed (buyer)</li>
+<li>🚫 Withdraw: ❌ Not allowed</li>
+<li>🚫 Execute/Complete: ❌ Not allowed</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="-notes"><a class="header" href="#-notes">📌 Notes</a></h3>
+<ul>
+<li>
+<p><strong>Dispute only happens from <code>active</code> or <code>executed</code></strong></p>
+</li>
+<li>
+<p><strong>Rollback only allowed when:</strong></p>
+<ul>
+<li>State is not <code>active</code> or is expired</li>
+<li>State is not <code>executed</code>, <code>completed</code>, or <code>disputed</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Withdraw only allowed when:</strong></p>
+<ul>
+<li>State is <code>completed</code></li>
+<li>Or <code>executed</code> and not dispute submitted by customer and 5 days after expired</li>
+</ul>
+</li>
+<li>
+<p><strong>No state transitions allowed from <code>completed</code>, <code>disputed</code>, or <code>canceled</code></strong> unless manually handled</p>
+</li>
+</ul>
 <blockquote>
 <p>🔐 Funds are locked until the customer approves service completion.</p>
 </blockquote>
 <hr />
-<h2 id="-7-creating-a-verifiable-presentation-vp"><a class="header" href="#-7-creating-a-verifiable-presentation-vp">📂 7. Creating a Verifiable Presentation (VP)</a></h2>
+<h2 id="-6-creating-a-verifiable-presentation-vp"><a class="header" href="#-6-creating-a-verifiable-presentation-vp">📂 6. Creating a Verifiable Presentation (VP)</a></h2>
 <p>Combine multiple VCs into a single presentation file.</p>
-<h3 id="steps-4"><a class="header" href="#steps-4">Steps:</a></h3>
+<h3 id="steps-3"><a class="header" href="#steps-3">Steps:</a></h3>
 <ol>
 <li>Go to <strong>“Credentials”</strong> &gt; Tap <strong>“New Verifiable Entity”</strong>.</li>
 <li>Enter the <strong>issuer DID</strong> (your identity or a key-based DID).</li>
@@ -333,7 +482,7 @@
 <li>The presentation is stored in your wallet and can be exported manually.</li>
 </ol>
 <hr />
-<h2 id="-8-exporting-and-sharing-credentials"><a class="header" href="#-8-exporting-and-sharing-credentials">📦 8. Exporting and Sharing credentials</a></h2>
+<h2 id="-7-exporting-and-sharing-credentials"><a class="header" href="#-7-exporting-and-sharing-credentials">📦 7. Exporting and Sharing credentials</a></h2>
 <p>All credentials, presentations, and document references can be exported as JSON files.</p>
 <h3 id="to-export"><a class="header" href="#to-export">To Export:</a></h3>
 <ol>
@@ -345,8 +494,6 @@
 <li>Share file manually via email or messaging apps.</li>
 <li>Upload to IPFS or Arweave for decentralized access (optional).</li>
 </ul>
-<hr />
-<p>These guides are designed to help both new and experienced users confidently navigate and utilize the full suite of Contract Foundry services through the mobile app. For troubleshooting or in-app help, refer to the <strong>Support</strong> or <strong>FAQ</strong> section in the main menu.</p>
 
                     </main>
 

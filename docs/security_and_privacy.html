@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Secutiry and privacy - contract foundry docs</title>
+        <title>Secutiry and privacy - Contract Foundry Docs</title>
 
 
         <!-- Custom HTML head -->
@@ -134,7 +134,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">contract foundry docs</h1>
+                    <h1 class="menu-title">Contract Foundry Docs</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -166,79 +166,44 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="-security--privacy-model"><a class="header" href="#-security--privacy-model">📘 Security &amp; Privacy Model</a></h1>
-<p>Security and privacy are foundational principles of the Contract Foundry platform. Every interaction—whether it involves deploying a contract, signing a document, or verifying a credential—is built to preserve user sovereignty, ensure data confidentiality, and protect against unauthorized access or tampering.</p>
-<hr />
-<h2 id="-1-non-custodial-architecture"><a class="header" href="#-1-non-custodial-architecture">🔐 1. Non-Custodial Architecture</a></h2>
-<p>Contract Foundry is designed as a <strong>fully non-custodial platform</strong>. Users maintain complete control over their private keys, identities, credentials, and funds at all times.</p>
-<h3 id="key-elements"><a class="header" href="#key-elements">Key Elements:</a></h3>
+                        <h1 id="security-and-privacy"><a class="header" href="#security-and-privacy">Security and Privacy</a></h1>
+<p>At Contract Foundry, your privacy and security are our highest priorities. We are committed to protecting your personal information and empowering you with full control over your data.</p>
+<h3 id="data-minimalism-and-transparency"><a class="header" href="#data-minimalism-and-transparency">Data Minimalism and Transparency</a></h3>
+<p>We follow a strict policy of data minimalism. Contract Foundry does <strong>not collect, store, or process any sensitive personal information</strong> such as names, phone numbers, government IDs, wallet keys, biometric data, or user behavior. Your privacy is respected at every step.</p>
+<h3 id="local-control-of-identity-and-keys"><a class="header" href="#local-control-of-identity-and-keys">Local Control of Identity and Keys</a></h3>
+<p>All cryptographic keys, digital identities, and credentials are created and stored <strong>exclusively on your device</strong>. This means:</p>
 <ul>
-<li><strong>Private Keys</strong> are never stored, shared, or transmitted by SCaaS platform.</li>
-<li><strong>All signing actions</strong> are executed locally on the user's device.</li>
-<li><strong>Wallet encryption</strong> is built into the official wallet app.</li>
+<li>We have <strong>no access</strong> to your private keys or credentials.</li>
+<li>Your sensitive information never leaves your device unless you choose to share it.</li>
+<li>If you lose your keys, they cannot be recovered by us or anyone else — so secure your device and backups carefully.</li>
 </ul>
-<p>This model ensures that the platform itself never has access to sensitive user assets or data.</p>
-<hr />
-<h2 id="-2-encrypted-local-storage"><a class="header" href="#-2-encrypted-local-storage">🔒 2. Encrypted Local Storage</a></h2>
-<p>The official wallet app stores all user data—including private keys, credentials, and contract records—in an encrypted format. Data remains fully offline unless manually exported.</p>
-<hr />
-<h2 id="-3-secure-on-chain-transactions"><a class="header" href="#-3-secure-on-chain-transactions">📡 3. Secure On-Chain Transactions</a></h2>
-<p>All blockchain interactions (e.g., contract deployments, status updates, identity changes) are signed locally and sent to the blockchain only after the user explicitly authorizes the transaction.</p>
-<h3 id="protection-measures"><a class="header" href="#protection-measures">Protection Measures:</a></h3>
+<h3 id="secure-authentication-and-performance-monitoring"><a class="header" href="#secure-authentication-and-performance-monitoring">Secure Authentication and Performance Monitoring</a></h3>
+<p>To ensure secure login and maintain app performance, we use third-party services like Firebase Authentication and Firebase Analytics:</p>
 <ul>
-<li>Users must approve each transaction with their private key.</li>
-<li>Transactions cannot be forged or replayed.</li>
-<li>Full transparency via blockchain explorers.</li>
+<li>Only <strong>your email</strong> is stored by Firebase during authentication; Contract Foundry itself never accesses or stores this data.</li>
+<li>Performance monitoring collects only <strong>anonymous device data</strong> to detect crashes and improve stability — no personal tracking or profiling occurs.</li>
 </ul>
-<hr />
-<h2 id="-4-immutability--tamper-detection"><a class="header" href="#-4-immutability--tamper-detection">🧾 4. Immutability &amp; Tamper Detection</a></h2>
-<p>Once deployed or issued, contract data and credential references become <strong>immutable</strong>. Any attempt to alter or falsify this information can be easily detected through cryptographic verification.</p>
-<h3 id="technologies-used"><a class="header" href="#technologies-used">Technologies Used:</a></h3>
+<h3 id="no-tracking-or-data-sharing"><a class="header" href="#no-tracking-or-data-sharing">No Tracking or Data Sharing</a></h3>
+<p>We do <strong>not</strong> use cookies, web beacons, fingerprinting, or any tracking technologies. We do <strong>not</strong> sell or share user data with third parties. Your activity on Contract Foundry remains private and confidential.</p>
+<h3 id="integration-with-decentralized-systems"><a class="header" href="#integration-with-decentralized-systems">Integration with Decentralized Systems</a></h3>
+<p>When you choose to interact with third-party decentralized identity providers or verifiable credential issuers, these integrations are:</p>
 <ul>
-<li>IPFS / Arweave for tamper-proof file referencing.</li>
-<li>DID-based proof metadata for verifying authenticity.</li>
-<li>Verifiable audit trails available on-chain.</li>
+<li>Fully <strong>optional and user-controlled</strong></li>
+<li>Managed outside Contract Foundry</li>
+<li>Governed by their own privacy policies and protocols</li>
 </ul>
-<hr />
-<h2 id="-5-legal-and-standards-compliance"><a class="header" href="#-5-legal-and-standards-compliance">📜 5. Legal and Standards Compliance</a></h2>
-<p>Contract Foundry is engineered to meet international standards for digital identity and electronic signatures.</p>
-<h3 id="supported-frameworks"><a class="header" href="#supported-frameworks">Supported Frameworks:</a></h3>
+<h3 id="escrow-and-dispute-management"><a class="header" href="#escrow-and-dispute-management">Escrow and Dispute Management</a></h3>
+<p>Our escrow functionality enables trustless contract payments, but Contract Foundry does <strong>not intervene</strong> in disputes. Contract participants retain full control, and disputed funds or actions are paused until all parties agree.</p>
+<h3 id="content-and-age-restrictions"><a class="header" href="#content-and-age-restrictions">Content and Age Restrictions</a></h3>
 <ul>
-<li><strong>eIDAS</strong>: Recognized digital signatures within the EU.</li>
-<li><strong>ESIGN</strong>: U.S. standard for electronic contracts and records.</li>
-<li><strong>W3C DID &amp; VC</strong>: Interoperable decentralized identity and verifiable credentials.</li>
-<li><strong>GDPR</strong>: Privacy-by-design system with full data deletion capability.</li>
+<li>Use of asset paywalls for illegal or inappropriate content is prohibited and subject to user reporting.</li>
+<li>Contract Foundry is intended for users aged 22 and above; we do not knowingly collect data from minors.</li>
 </ul>
+<h3 id="ongoing-commitment"><a class="header" href="#ongoing-commitment">Ongoing Commitment</a></h3>
+<p>We regularly review and update our privacy practices to stay aligned with evolving technology and regulations. Any updates will be communicated clearly, and continued use means acceptance of the current policy.</p>
 <hr />
-<h2 id="-6-gdpr-compliant-data-handling"><a class="header" href="#-6-gdpr-compliant-data-handling">🗑️ 6. GDPR-Compliant Data Handling</a></h2>
-<p>The platform respects users’ right to <strong>control and erase their data</strong>. Users can permanently delete their accounts, associated key DIDs (DID termination wont effects on generated signatures), and all stored credentials via the Android app.</p>
-<h3 id="key-principles"><a class="header" href="#key-principles">Key Principles:</a></h3>
-<ul>
-<li><strong>Right to Be Forgotten</strong>: Users can self-initiate irreversible data deletion.</li>
-<li><strong>No Backups or Recovery</strong>: Once deleted, data—including subscriptions and account balance—cannot be restored.</li>
-<li><strong>No Central Logging</strong>: The platform stores no off-chain personal metadata.</li>
-</ul>
-<p>This strict compliance ensures that users are always in full control of their identity and digital footprint.</p>
-<hr />
-<h2 id="-7-zero-third-party-risk"><a class="header" href="#-7-zero-third-party-risk">🛡️ 7. Zero Third-Party Risk</a></h2>
-<p>Contract Foundry introduces <strong>no third-party intermediaries</strong> at any point in user workflows. All interactions are peer-to-peer or self-directed using open blockchain protocols.</p>
-<h3 id="risk-mitigation"><a class="header" href="#risk-mitigation">Risk Mitigation:</a></h3>
-<ul>
-<li>No central custody of user funds or identity.</li>
-<li>No hidden APIs transmitting data to external services.</li>
-<li>Trust is placed only in the open-source cryptographic standards.</li>
-</ul>
-<hr />
-<h2 id="-8-ongoing-security-audits-and-hardening"><a class="header" href="#-8-ongoing-security-audits-and-hardening">🧠 8. Ongoing Security Audits and Hardening</a></h2>
-<p>The platform’s smart contracts and key modules undergo routine security assessments and audits. Updates follow a strict versioning and changelog process, with a focus on transparency and user trust.</p>
-<h3 id="practices"><a class="header" href="#practices">Practices:</a></h3>
-<ul>
-<li>Periodic smart contract audits by external firms.</li>
-<li>Responsible disclosure policy for vulnerabilities.</li>
-<li>Cryptographic updates as standards evolve.</li>
-</ul>
-<hr />
-<p>By merging strong encryption, decentralized identity, legal compliance, and user-centric design, Contract Foundry sets a high bar for trust and security in blockchain-powered business interactions.</p>
+<p>If you have any questions or concerns about how your data is handled, please contact us anytime at:
+📧 <a href="mailto:contractfoundry@gmail.com">contractfoundry@gmail.com</a></p>
 
                     </main>
 

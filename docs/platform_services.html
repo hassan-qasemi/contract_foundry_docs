@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Plafrom services - contract foundry docs</title>
+        <title>Plafrom services - Contract Foundry Docs</title>
 
 
         <!-- Custom HTML head -->
@@ -134,7 +134,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">contract foundry docs</h1>
+                    <h1 class="menu-title">Contract Foundry Docs</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -166,115 +166,30 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="-platform-services"><a class="header" href="#-platform-services">📘 Platform Services</a></h1>
-<p>Contract Foundry provides a comprehensive suite of decentralized services to manage identities, issue credentials, execute smart contracts, and handle digital signatures—securely and seamlessly through a mobile-first experience. Each service is designed with privacy, scalability, and automation in mind, making the platform both powerful and user-friendly.</p>
+                        <h1 id="platform-services"><a class="header" href="#platform-services">Platform Services</a></h1>
+<h3 id="self-sovereign-identity"><a class="header" href="#self-sovereign-identity">Self-Sovereign Identity</a></h3>
+<p><strong>What it is:</strong> Manage your digital identity securely and privately, giving you full control over your personal data without relying on centralized providers. This aligns with global standards such as the W3C’s Self-Sovereign Identity framework, which empowers users to own and control their identity independently.</p>
+<p><strong>Use Case:</strong> A person applying for financial services can securely share verified identity attributes—such as name, address, and creditworthiness—directly with banks or service providers without exposing unnecessary information or depending on a central authority. This streamlines verification while protecting privacy.</p>
 <hr />
-<h2 id="1-non-custadial-wallet-dapp"><a class="header" href="#1-non-custadial-wallet-dapp">1. Non-Custadial Wallet dApp</a></h2>
-<p>An <strong>non-custodial wallet decentralized application</strong> as the only platform native interface of Contract Foundry SCaaS, which acts as the sole interface for all interactions on the platform.</p>
-<h3 id="features"><a class="header" href="#features">Features:</a></h3>
-<ul>
-<li>Fully decentralized and user-controlled.</li>
-<li>Private keys are stored locally—never transmitted or shared.</li>
-<li>Supports encrypted storage of credentials and identity data.</li>
-<li>All contract deployments and digital signatures are executed on-device.</li>
-<li>Mandatory for using DID, VC, and contract modules.</li>
-</ul>
-<h3 id="compliance--privacy"><a class="header" href="#compliance--privacy">Compliance &amp; Privacy:</a></h3>
-<ul>
-<li>Enforces <strong>GDPR principles</strong>: Users can permanently delete accounts and associated data.</li>
-<li>Once deleted, <strong>subscriptions and account balances are unrecoverable</strong>.</li>
-</ul>
+<h3 id="verifiable-document-verification"><a class="header" href="#verifiable-document-verification">Verifiable Document Verification</a></h3>
+<p><strong>What it is:</strong> Securely validate important documents such as degrees, patents, and legal agreements. Verified documents are tamper-proof, auditable, and legally admissible.</p>
+<p><strong>Use Case:</strong> A student applying to a university can use Contract Foundry to provide instantly verifiable proof of their previous degrees, speeding up admissions. Similarly, patent holders can register and verify intellectual property documents, ensuring authenticity and protection against fraud.</p>
 <hr />
-<h2 id="2-verifiable-document-contracts"><a class="header" href="#2-verifiable-document-contracts">2. Verifiable Document Contracts</a></h2>
-<p>Designed for OnChain Document Certification for verifiable documents such as licenses, or compliance documents.</p>
-<h3 id="capabilities"><a class="header" href="#capabilities">Capabilities:</a></h3>
-<ul>
-<li>Automated on-chain document verification and authentiaction.</li>
-<li>Prevent tampering by onchain immutable document existance proof.</li>
-<li>Allow optional <strong>expiration and revocation</strong> for time-sensitive documents.</li>
-<li>Multi signature, filterable, automated on-chain signature verification.</li>
-<li>Immutable audit trails.</li>
-</ul>
-<h3 id="use-cases"><a class="header" href="#use-cases">Use Cases:</a></h3>
-<ul>
-<li>Certifying compliance documents</li>
-<li>Publishing legal or academic proofs</li>
-<li>Issuing time-limited digital records</li>
-</ul>
+<h3 id="pledge-contract"><a class="header" href="#pledge-contract">Pledge Contract</a></h3>
+<p><strong>What it is:</strong> Enables secure, automated payment transfers, supporting partial or full payments, milestone releases, rollback, and dispute prevention, especially suited for complex transactions.</p>
+<p><strong>Use Case:</strong> A multinational corporation working with freelancers across borders uses pledge contracts to manage large payments safely. Funds are held and released upon milestone completion, reducing risk from cross-border transaction delays, currency fluctuations, or trust issues, streamlining international freelance and business deals.</p>
 <hr />
-<h2 id="3-pledge-contracts-trustless-payment-escrow"><a class="header" href="#3-pledge-contracts-trustless-payment-escrow">3. Pledge Contracts (Trustless Payment Escrow)</a></h2>
-<p>The Pledge Contract trustless escrow and p2p payment, enables milestone-based, fund safety first, fund transfers between two parties—without requiring mutual trust or third-party oversight.</p>
-<h3 id="features-1"><a class="header" href="#features-1">Features:</a></h3>
-<ul>
-<li>Funds lock, protect against unplanned or illegal actions.</li>
-<li>Safety first collect and collback, leaving or compeleting contract with both side agreement without losing fund.</li>
-<li>Cancelable and expirable.</li>
-<li>Native currency bases on using network is used for all payments.</li>
-</ul>
-<h3 id="use-cases-1"><a class="header" href="#use-cases-1">Use Cases:</a></h3>
-<ul>
-<li>Freelance and service-based industries</li>
-<li>B2B contract work</li>
-<li>Microservices and gig economy platforms</li>
-</ul>
+<h3 id="asset-paywall"><a class="header" href="#asset-paywall">Asset Paywall</a></h3>
+<p><strong>What it is:</strong> Monetize your digital assets, such as e-books or exclusive written content, using a decentralized paywall controlled entirely by you.</p>
+<p><strong>Use Case:</strong> An independent book author distributes exclusive chapters or early releases directly to readers. Using Contract Foundry’s asset paywall, readers pay securely through blockchain-based payments, allowing the author to earn revenue directly without platform fees or intermediaries.</p>
 <hr />
-<h2 id="4-asset-paywall-contracts"><a class="header" href="#4-asset-paywall-contracts">4. Asset Paywall Contracts</a></h2>
-<p>Monetize digital assets securely, reach global audit, grant access only after payment has been confirmed.</p>
-<h3 id="supported-storage"><a class="header" href="#supported-storage">Supported Storage:</a></h3>
-<ul>
-<li>Decentralized storages like IPFS and Arweave</li>
-<li>Centralized storages like dropbox or even user-hosted file servers</li>
-</ul>
-<h3 id="features-2"><a class="header" href="#features-2">Features:</a></h3>
-<ul>
-<li>Automated asset verification and authentication.</li>
-<li>OnChain paywall.</li>
-</ul>
-<h3 id="use-cases-2"><a class="header" href="#use-cases-2">Use Cases:</a></h3>
-<ul>
-<li>Selling reports, research papers, templates, 3d models and etc.</li>
-<li>Distributing eBooks and media assets</li>
-</ul>
+<h3 id="verifiable-credentials"><a class="header" href="#verifiable-credentials">Verifiable Credentials</a></h3>
+<p><strong>What it is:</strong> Issue and manage W3C-compliant verifiable credentials that users hold directly in their wallets. These credentials are portable, instantly verifiable, reusable, and revocable.</p>
+<p><strong>Use Case:</strong> Many institutions—from universities to professional associations—issue digital certificates or licenses as verifiable credentials. For example, a professional license holder can instantly prove their qualifications to employers or regulatory bodies without the need for paper documents or centralized databases.</p>
 <hr />
-<h2 id="5-decentralized-identity-management"><a class="header" href="#5-decentralized-identity-management">5. Decentralized Identity Management</a></h2>
-<p>Users can create and manage <strong>ERC-1056, W3C DID compliant decentralized identities</strong> directly through the wallet app.</p>
-<h3 id="features-3"><a class="header" href="#features-3">Features:</a></h3>
-<ul>
-<li>Identifiable, bearry person or entity identity, usable in both person and group.</li>
-<li>Multi controller, delegates, and services.</li>
-</ul>
-<h3 id="use-cases-3"><a class="header" href="#use-cases-3">Use Cases:</a></h3>
-<ul>
-<li>Required for compliant signatures.</li>
-<li>Required DID for legal binding contract and credential issuance and verification.</li>
-</ul>
-<hr />
-<h2 id="6-verifiable-credential-issuance"><a class="header" href="#6-verifiable-credential-issuance">6. Verifiable Credential Issuance</a></h2>
-<p>Issue and verify wallet-first user-centric W3C verifiable credentials v2.0 with full cryptographic integrity using a guided, form-based workflow.</p>
-<h3 id="features-4"><a class="header" href="#features-4">Features:</a></h3>
-<ul>
-<li>Support for standalone and registered credentials.</li>
-<li>Create schema and metadata through structured input.</li>
-<li>Selective disclosure</li>
-<li>Exportable.</li>
-</ul>
-<hr />
-<h2 id="7-verifiable-presentations"><a class="header" href="#7-verifiable-presentations">7. Verifiable Presentations</a></h2>
-<p>Bundle multiple credentials into a <strong>Verifiable Presentation (VP)</strong>, which can be shared as a single digital proof package.</p>
-<h3 id="highlights"><a class="header" href="#highlights">Highlights:</a></h3>
-<ul>
-<li>Present multiple VCs for onboarding or verification.</li>
-<li>Free to generate and manage.</li>
-<li>Stored in wallet and exportable as a file.</li>
-</ul>
-<h3 id="use-cases-4"><a class="header" href="#use-cases-4">Use Cases:</a></h3>
-<ul>
-<li>Job applications requiring multiple qualifications</li>
-<li>Compliance audits</li>
-<li>Digital ID onboarding for services</li>
-</ul>
-<hr />
-<p>Contract Foundry's platform services are built to be modular, privacy-focused, and legally compliant—offering end-to-end decentralized operations for businesses, creators, and individuals  alike.</p>
+<h3 id="decentralized-identity-management"><a class="header" href="#decentralized-identity-management">Decentralized Identity Management</a></h3>
+<p><strong>What it is:</strong> Authenticate and manage permissions for individuals and organizations in a decentralized manner, removing reliance on centralized identity providers.</p>
+<p><strong>Use Case:</strong> Enterprises use decentralized identity management to control employee access to sensitive systems. Employees authenticate via their self-sovereign digital identities, enhancing security and reducing risks associated with traditional password-based systems and centralized data breaches.</p>
 
                     </main>
 
