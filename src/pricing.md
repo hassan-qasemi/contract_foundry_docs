@@ -1,112 +1,31 @@
-# 📘 Pricing & Subscription
+# Revenue and Business Model
 
-Contract Foundry offers a flexible and transparent pricing model that caters to individuals, professionals, teams, and large enterprises. Users can choose from various subscription plans based on their needs, all while maintaining full sovereignty over their identities, data, and blockchain transactions.
+Contract Foundry offers flexible and transparent payment options tailored to meet the needs of individuals, creators, agencies, and enterprises.
 
-This section outlines how billing, service access, and subscriptions are structured.
+### Payment Methods
 
----
+**1. Account Charges:**
+Users can pay for individual services using Ethereum (ETH) through direct mainnet transactions. Each service has a specific fee charged in ETH, with network gas fees applied separately. These gas fees are determined by the Ethereum network and are not influenced or marked up by Contract Foundry. Gas fees are calculated directly from the user’s wallet (Externally Owned Account - EOA).
 
-## 💳 1. Subscription Tiers
+**2. Subscription Plans:**
+For regular users who prefer predictable costs and access, we offer four subscription tiers, each designed with discounts and features tailored to different user groups:
 
-Each subscription plan unlocks different features and usage limits across identity management, smart contracts, verifiable credentials, and document workflows.
+* **Professional:** 25% discount on services
+* **Creators:** 30% discount on services
+* **Agencies:** 35% discount on services
+* **Enterprises:** 40% discount on services
 
-### 🔹 Pro
+Enterprises also have the option to request custom subscription plans tailored specifically to their business needs and scale.
 
-* Designed for professional individuals or teams.
-* Quick access to all services for setup an startup in a limited time.
-* Limited VC issuance and contract deployments.
+### Subscription and Account Management
 
-### 🔹 Creator
+* Users have full control over their accounts and can terminate their subscriptions or account at any time.
+* Upon termination, all remaining balances and subscriptions are **immediately canceled and unrecoverable**.
+* There are no hidden fees—platform service fees and Ethereum network fees are **clearly separated** and transparent.
 
-* Tailored for freelancers, digital artists, and content sellers.
-* Supports paywall contracts and full credential issuance.
-* Includes priority app support and storage integrations.
+### Network Gas Fees
 
-### 🔹 Agency
+* Network gas fees are set solely by the Ethereum blockchain based on current network demand.
+* Contract Foundry **does not charge or influence** these fees in any way.
+* Users pay gas fees directly from their own wallets when executing transactions or using platform services.
 
-* Built for small-to-medium teams or consulting groups.
-* More pledge contarcts.
-* Increased quotas and API support (coming soon).
-
-### 🔹 Enterprise
-
-* More Verifiable documents for business legal contracts
-* Customized plans for large organizations, institutions, or regulated industries.
-* Includes all Agency features plus:
-
-  * Dedicated support channel
-  * Integration assistance
-  * consultation and can order custome subscriptions too
-* Requires direct contact for plan negotiation and provisioning.
-
----
-
-## 🧾 2. Account Charging System (WEI Credits)
-
-Contract Foundry uses an internal **credit-based system** denominated in WEI (the smallest unit of ETH) to track service usage.
-
-### How It Works:
-
-* Users **preload credits** into their platform account (non-custodial and tracked via wallet metadata).
-* Credits are used for internal operations such as:
-
-  * Smart contract deployments
-  * Credential generation
-  * Subscription activation
-* Credit deductions are transparent and viewable in the wallet app history.
-
-> ⚠️ Note: These internal credits do not pay for blockchain gas fees (see next section).
-
----
-
-## ⛽ 3. Blockchain Gas Fees
-
-Gas fees—used to process transactions on the blockchain—are **paid directly from the user’s EOA**. These are separate from subscription costs.
-
-### Key Points:
-
-* Users must embalance their EOA and delegates.
-* Every interaction requiring a transaction (e.g., deploy contract, update DID) incurs a gas fee.
-* Contract Foundry does **not** control or markup network fees.
-
----
-
-## 🔁 4. Billing Frequency and Plan Duration
-
-Subscriptions can be activated and extended directly through the wallet interface.
-
-### Options:
-
-* **Monthly** and **Annual** plans
-* Auto-expiration with option to renew
-* Discount tiers for longer commitments
-
-Enterprise customers may request:
-
-* Invoiced billing cycles
-* Bulk seat licenses
-* Volume discounts based on contract and credential activity
-
----
-
-## 🗑️ 5. Account Deletion and Refund Policy
-
-Contract Foundry adheres to a **strict non-recoverability policy** to align with GDPR principles.
-
-### Terms:
-
-* Deleting your wallet/account removes all data permanently.
-* Any remaining credit balance or active subscription is **non-refundable** and **non-recoverable**.
-* This policy ensures data privacy and eliminates platform-side custody.
-
----
-
-## 💬 6. Support and Upgrades
-
-* Users can view their current plan and usage from the app.
-* Plan upgrades are applied instantly upon payment.
-* Email support and consulation is available for enterprises.
-
----
-
-Contract Foundry’s pricing is designed to be fair, modular, and scalable—from individuals issuing personal credentials to enterprises automating document workflows and trustless payments. Our goal is to provide cutting-edge decentralized services with predictable and transparent cost structures.

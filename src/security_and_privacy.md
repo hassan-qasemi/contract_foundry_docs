@@ -1,102 +1,52 @@
-# 📘 Security & Privacy Model
+# Security and Privacy
 
-Security and privacy are foundational principles of the Contract Foundry platform. Every interaction—whether it involves deploying a contract, signing a document, or verifying a credential—is built to preserve user sovereignty, ensure data confidentiality, and protect against unauthorized access or tampering.
+At Contract Foundry, your privacy and security are our highest priorities. We are committed to protecting your personal information and empowering you with full control over your data.
 
----
+### Data Minimalism and Transparency
 
-## 🔐 1. Non-Custodial Architecture
+We follow a strict policy of data minimalism. Contract Foundry does **not collect, store, or process any sensitive personal information** such as names, phone numbers, government IDs, wallet keys, biometric data, or user behavior. Your privacy is respected at every step.
 
-Contract Foundry is designed as a **fully non-custodial platform**. Users maintain complete control over their private keys, identities, credentials, and funds at all times.
+### Local Control of Identity and Keys
 
-### Key Elements:
+All cryptographic keys, digital identities, and credentials are created and stored **exclusively on your device**. This means:
 
-* **Private Keys** are never stored, shared, or transmitted by SCaaS platform.
-* **All signing actions** are executed locally on the user's device.
-* **Wallet encryption** is built into the official wallet app.
+* We have **no access** to your private keys or credentials.
+* Your sensitive information never leaves your device unless you choose to share it.
+* If you lose your keys, they cannot be recovered by us or anyone else — so secure your device and backups carefully.
 
-This model ensures that the platform itself never has access to sensitive user assets or data.
+### Secure Authentication and Performance Monitoring
 
----
+To ensure secure login and maintain app performance, we use third-party services like Firebase Authentication and Firebase Analytics:
 
-## 🔒 2. Encrypted Local Storage
+* Only **your email** is stored by Firebase during authentication; Contract Foundry itself never accesses or stores this data.
+* Performance monitoring collects only **anonymous device data** to detect crashes and improve stability — no personal tracking or profiling occurs.
 
-The official wallet app stores all user data—including private keys, credentials, and contract records—in an encrypted format. Data remains fully offline unless manually exported.
+### No Tracking or Data Sharing
 
----
+We do **not** use cookies, web beacons, fingerprinting, or any tracking technologies. We do **not** sell or share user data with third parties. Your activity on Contract Foundry remains private and confidential.
 
-## 📡 3. Secure On-Chain Transactions
+### Integration with Decentralized Systems
 
-All blockchain interactions (e.g., contract deployments, status updates, identity changes) are signed locally and sent to the blockchain only after the user explicitly authorizes the transaction.
+When you choose to interact with third-party decentralized identity providers or verifiable credential issuers, these integrations are:
 
-### Protection Measures:
+* Fully **optional and user-controlled**
+* Managed outside Contract Foundry
+* Governed by their own privacy policies and protocols
 
-* Users must approve each transaction with their private key.
-* Transactions cannot be forged or replayed.
-* Full transparency via blockchain explorers.
+### Escrow and Dispute Management
 
----
+Our escrow functionality enables trustless contract payments, but Contract Foundry does **not intervene** in disputes. Contract participants retain full control, and disputed funds or actions are paused until all parties agree.
 
-## 🧾 4. Immutability & Tamper Detection
+### Content and Age Restrictions
 
-Once deployed or issued, contract data and credential references become **immutable**. Any attempt to alter or falsify this information can be easily detected through cryptographic verification.
+* Use of asset paywalls for illegal or inappropriate content is prohibited and subject to user reporting.
+* Contract Foundry is intended for users aged 22 and above; we do not knowingly collect data from minors.
 
-### Technologies Used:
+### Ongoing Commitment
 
-* IPFS / Arweave for tamper-proof file referencing.
-* DID-based proof metadata for verifying authenticity.
-* Verifiable audit trails available on-chain.
-
----
-
-## 📜 5. Legal and Standards Compliance
-
-Contract Foundry is engineered to meet international standards for digital identity and electronic signatures.
-
-### Supported Frameworks:
-
-* **eIDAS**: Recognized digital signatures within the EU.
-* **ESIGN**: U.S. standard for electronic contracts and records.
-* **W3C DID & VC**: Interoperable decentralized identity and verifiable credentials.
-* **GDPR**: Privacy-by-design system with full data deletion capability.
+We regularly review and update our privacy practices to stay aligned with evolving technology and regulations. Any updates will be communicated clearly, and continued use means acceptance of the current policy.
 
 ---
 
-## 🗑️ 6. GDPR-Compliant Data Handling
-
-The platform respects users’ right to **control and erase their data**. Users can permanently delete their accounts, associated key DIDs (DID termination wont effects on generated signatures), and all stored credentials via the Android app.
-
-### Key Principles:
-
-* **Right to Be Forgotten**: Users can self-initiate irreversible data deletion.
-* **No Backups or Recovery**: Once deleted, data—including subscriptions and account balance—cannot be restored.
-* **No Central Logging**: The platform stores no off-chain personal metadata.
-
-This strict compliance ensures that users are always in full control of their identity and digital footprint.
-
----
-
-## 🛡️ 7. Zero Third-Party Risk
-
-Contract Foundry introduces **no third-party intermediaries** at any point in user workflows. All interactions are peer-to-peer or self-directed using open blockchain protocols.
-
-### Risk Mitigation:
-
-* No central custody of user funds or identity.
-* No hidden APIs transmitting data to external services.
-* Trust is placed only in the open-source cryptographic standards.
-
----
-
-## 🧠 8. Ongoing Security Audits and Hardening
-
-The platform’s smart contracts and key modules undergo routine security assessments and audits. Updates follow a strict versioning and changelog process, with a focus on transparency and user trust.
-
-### Practices:
-
-* Periodic smart contract audits by external firms.
-* Responsible disclosure policy for vulnerabilities.
-* Cryptographic updates as standards evolve.
-
----
-
-By merging strong encryption, decentralized identity, legal compliance, and user-centric design, Contract Foundry sets a high bar for trust and security in blockchain-powered business interactions.
+If you have any questions or concerns about how your data is handled, please contact us anytime at:
+📧 [contractfoundry@gmail.com](mailto:contractfoundry@gmail.com)
