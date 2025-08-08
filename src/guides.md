@@ -230,7 +230,7 @@ Perfect for freelancers, service providers, and milestone-based payment agreemen
 * **Withdraw only allowed when:**
 
   * State is `completed`
-  * Or `executed` and not dispute submitted by customer and 5 days after expired
+  * Or `executed` and no dispute submitted by customer and 5 days passed after expiretion day
 * **No state transitions allowed from `completed`, `disputed`, or `canceled`** unless manually handled
 
 > 🔐 Funds are locked until the customer approves service completion.
